@@ -15,6 +15,8 @@ void    ft_uputnbr(void* z, int spec, int **count)
         y = (unsigned long long) y;
     else if (spec == 0 && (y = (unsigned int) z))
      y = (unsigned int) y;
+    else if (spec == 3 && (y = (char) z))
+        y = (char) y;
     a = y;
 	
 	if (a >= 10)
@@ -41,6 +43,8 @@ void	ft_loputnbr(void* z, int spec, int **count)
         y = (long long) y;
     else if (spec == 0 && (y = (int) z))
            y = (int) y;
+     else if (spec == 3 && (y = (char) z))
+        y = (char) y;
       a = y;
 	if (y < 0)
 	{
@@ -189,15 +193,6 @@ void    functiondigital(va_list ap, int spec, int *count)
      void*     z;
 
      z = va_arg(ap, void*);
-   /* if (spec == 1)
-        y = (short) z;
-    else if (spec == 2)
-       y = (long) z;
-    else if (spec == 4)
-        y = (long long) z;
-    else 
-       y = (int) z;
-     */
      ft_loputnbr(z, spec, &count);
 }
 
@@ -208,8 +203,6 @@ void    functionpointer(va_list ap, int *count)
     *count = 2;
     z = va_arg(ap, void*);
     y = (long)z;
-    //ft_putsix (z);
-    //printf("%lx", y);
     ft_putstr("0x");
     ft_putsix(y, &count);
 
@@ -312,6 +305,8 @@ int main ()
   //ft_printf("%p",z);
   //printf("\n");
   //printf("%p",z);
-    ft_printf("%%");
+  int q = 1234567;
+  ft_printf("%hhd", q);
+
     return (0);
 }
