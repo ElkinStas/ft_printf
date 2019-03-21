@@ -8,31 +8,17 @@ void    ft_uputnbr(void* z, int spec, int **count)
     unsigned long long y;
     unsigned long long a;
      if ((spec == 1) && (y = (unsigned short) z))
-     {
-      // y = (short) z;
        y = (unsigned short)y;
-     }
     else if ((spec == 2) && (y = (unsigned long) z))
-    {
-       //y = (long) z;
        y = (unsigned long) y;
-    }
     else if (spec == 4 && (y = (unsigned long long) z))
-    {
-       // y = (long long) z;
         y = (unsigned long long) y;
-    }
     else if (spec == 0 && (y = (unsigned int) z))
-       {
-           //y = (int) z;
-           y = (unsigned int) y;
-       }
+     y = (unsigned int) y;
     a = y;
 	
 	if (a >= 10)
-	{
 		ft_uputnbr((void*)(a / 10), spec, count); 
-	}
 	ft_putchar((char)(a % 10 + '0'));
     (**count)++;
 }
@@ -41,15 +27,6 @@ void    functiondigitalu(va_list ap, int spec, int *count)
      void*     z;
 
      z = va_arg(ap, void*);
-   /* if (spec == 1)
-        y = (short) z;
-    else if (spec == 2)
-       y = (long) z;
-    else if (spec == 4)
-        y = (long long) z;
-    else 
-       y = (int) z;
-     */
      ft_uputnbr(z, spec, &count);
 }
 void	ft_loputnbr(void* z, int spec, int **count)
@@ -57,39 +34,23 @@ void	ft_loputnbr(void* z, int spec, int **count)
 	long long y;
     long long a;
      if ((spec == 1) && (y = (short) z))
-     {
-      // y = (short) z;
-       y = (short)y;
-     }
+          y = (short)y;
     else if ((spec == 2) && (y = (long) z))
-    {
-       //y = (long) z;
        y = (long) y;
-    }
     else if (spec == 4 && (y = (long long) z))
-    {
-       // y = (long long) z;
         y = (long long) y;
-    }
     else if (spec == 0 && (y = (int) z))
-       {
-           //y = (int) z;
            y = (int) y;
-       }
-    a = y;
+      a = y;
 	if (y < 0)
 	{
 		a = -1 * y;
 		ft_putchar('-');
 	}
 	else
-	{
 		a = y;
-	}
 	if (a >= 10)
-	{
 		ft_loputnbr((void*)(a / 10), spec, count); 
-	}
 	ft_putchar((char)(a % 10 + '0'));
     (**count)++;
 }
@@ -317,6 +278,8 @@ int ft_printf(char *fmt, ...)
             {
                 functiondigitalu(ap, spec, &count);
             }
+            if (*p == '%')
+             ft_putchar('%');
         p++;
     }
     va_end(ap);
@@ -335,12 +298,12 @@ int main ()
      //ft_printf("%d", (ft_printf("%p", x)));
     //ft_printf("%d", (ft_printf("%c", 'z')));
     ////printf("%c", 'z');
-   unsigned long long q = 10000000000000000000, r = 6;
+   //unsigned long long q = 123, r = 6;
    //short l;
   
    //ft_printf("%d", ft_printf("%s", x));
-   ft_printf("%d", ft_printf("%llu", q));
-     //printf("\n");
+   //ft_printf("%d", ft_printf("%llu", q));
+    // printf("%hhi", q);
     // printf("%lu", sizeof(long));
     //ft_printf("%li", q);
    //int x = 7562673;
@@ -349,5 +312,6 @@ int main ()
   //ft_printf("%p",z);
   //printf("\n");
   //printf("%p",z);
+    ft_printf("%%");
     return (0);
 }
