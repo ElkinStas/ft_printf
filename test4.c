@@ -16,7 +16,20 @@ typedef struct      s_flist
 
 }					t_flist;
 
-
+void    ft_text(char **p, t_flist *base)
+{
+    int i;
+    int q;
+    i = 0;
+    q = ft_strlen(*p);
+    while (i < q && **p != '%')
+    {   
+        ft_putchar(**p);
+        (base->count)++;
+        i++;
+        (*p)++;
+    }
+}
 void    ft_uputnbr(void* z, t_flist **base)
 {
     unsigned long long y;
@@ -45,6 +58,7 @@ void    functiondigitalu(va_list ap, t_flist *base)
      z = va_arg(ap, void*);
      ft_uputnbr(z, &base);
 }
+
 void	ft_loputnbr(void* z, t_flist **base)
 {
 	long long y;
@@ -237,7 +251,7 @@ int ft_printf(char *fmt, ...)
     {
         if(*p != '%')
         {
-            ft_putchar(*p);
+            ft_text(&p, &base);
             //continue;
            // p++;
         }
@@ -317,7 +331,7 @@ int main ()
   //printf("%d",printf("%p",z));
     int q = 1234567;
     //ft_printf("%hhd", q);
-    ft_printf( "gavgavgav\n");
+   printf("%d", printf( "gavgavgav\n"));
    // printf("%hhd", q);
 
     return (0);
