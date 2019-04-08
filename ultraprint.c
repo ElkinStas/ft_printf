@@ -1,8 +1,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdio.h>
-#include "libft.h"
-
+#include "libft/libft.h"
 
 
 typedef struct      s_flist
@@ -1479,3 +1478,46 @@ int ft_printf(const char *restrict format, ...)
     va_end(ap);
     return(base.count);
 }
+int main ()
+{
+    int l;
+ // char *x = "this";
+   //ft_printf("%d", ft_printf("%s", x));
+    //printf("\n");
+   // int z;
+  //  int l;
+   // char s = 'S';
+    //z = 13478;
+    //printf("%d", (printf("%p", x)));
+     //printf("\n");
+     //ft_printf("%d", (ft_printf("%p", x)));
+    //ft_printf("%d", (ft_printf("%c", 'z')));
+    //printf("%d", printf("%o", 'z'));
+    //ft_printf("%d", ft_printf("%o", 'z'));
+   //unsigned long long q = 123, r = 6;
+   //short l;
+  
+   //ft_printf("%d", ft_printf("%s", x));
+   //ft_printf("%d", ft_printf("%llu", q));
+    // printf("%hhi", q);
+    // printf("%lu", sizeof(long));
+    //ft_printf("%li", q);
+   //int x = 7562673;
+ // ft_printf("%d", ft_printf("%X", x));
+  //char *z;
+  //ft_printf("%d",ft_printf("%p",z));
+  //printf("\n");
+  //printf("%d",printf("%p",z));
+    //unsigned int q = 123456789;
+    //short int  q =  −32769;
+    //ft_printf("%d",(ft_printf("'%-10d0'", q)));
+    //printf("%d", ft_printf("%-10x", q));
+    //printf("%d", printf("%+10.5d", 4242));
+  ft_printf("%lld", -9223372036854775808);
+   //ft_printf("%d", ft_printf( "gavgavgav\n%hhx\n", q));
+   //ft_printf("%d", ft_printf( "gavgavgav\n%x\n", q));
+   //ft_printf("%d", ft_printf( "%lu", q));
+   // printf("%hhd", q);
+
+    return (0);
+} 
