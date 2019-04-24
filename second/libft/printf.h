@@ -6,7 +6,7 @@
 /*   By: ptorchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:27:03 by ptorchbu          #+#    #+#             */
-/*   Updated: 2019/04/10 19:55:46 by ptorchbu         ###   ########.fr       */
+/*   Updated: 2019/04/24 16:00:46 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,6 @@ int					ft_check_last_symb(long double fl, int len);
 void				countresh2(long long z, t_flist *base, int check,\
 		long long checkmin);
 void				ft_func_check_symb2(va_list ap, char *p, t_flist *base);
+void				ft_zerodigital2(t_flist **base, int checkmin);
 
 #endif

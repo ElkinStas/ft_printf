@@ -6,7 +6,7 @@
 /*   By: bhudson <bhudson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 18:24:37 by bhudson           #+#    #+#             */
-/*   Updated: 2019/04/24 14:59:22 by bhudson          ###   ########.fr       */
+/*   Updated: 2019/04/24 15:58:13 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	functioneight(va_list ap, t_flist *base)
 	if (base->point > 0)
 		base->indent = base->indent - base->point;
 	if (base->point > 0)
-		ft_zerodigital(&base, checkmin);
+		ft_zerodigital2(&base, checkmin);
 	if (base->resh == 1 && checkmin != 0)
 		ft_count_resh3(z, base, check, checkmin);
 	else if (base->indent > 0)
