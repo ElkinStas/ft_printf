@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   countresh2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptorchbu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bhudson <bhudson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 18:19:40 by ptorchbu          #+#    #+#             */
-/*   Updated: 2019/04/10 19:45:58 by ptorchbu         ###   ########.fr       */
+/*   Updated: 2019/04/24 17:17:41 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ void	ft_check_indent4(t_flist **base, unsigned long long y)
 			((*base)->count)++;
 		}
 	}
-	else	if ((y != 0) || (*base)->point2 != '.')
+	else	if ((y != 0) || (*base)->point2 != '.' 
+			|| (y == 0 && (*base)->point2 == '.'))
 	{
-		ft_convertation((long long)y);
+		ft_convertation((unsigned long long)y);
 		((*base)->count)++;
 	}
 }

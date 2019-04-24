@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functionsixbig.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptorchbu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bhudson <bhudson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 15:39:42 by ptorchbu          #+#    #+#             */
-/*   Updated: 2019/04/10 19:52:23 by ptorchbu         ###   ########.fr       */
+/*   Updated: 2019/04/24 17:44:48 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	functionsix(va_list ap, t_flist *base)
 	if (base->point > 0)
 		base->indent = base->indent - base->point;
 	if (base->point > 0)
-		ft_zerodigital(&base, checkmin);
+		ft_zerodigital2(&base, checkmin);
 	if (base->resh == 1 && checkmin != 0)
 		countresh2(z, base, check, checkmin);
 	else	if (base->indent > 0)
