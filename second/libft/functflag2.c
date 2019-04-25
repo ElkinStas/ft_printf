@@ -98,7 +98,8 @@ void	functflag2(char **p, t_flist *base)
 	i = 0;
 	h = 0;
 	l = 0;
-	while ((*p)[i] && (*p)[i] != '#' && (*p)[i] != '%' && (*p)[i] != '.')
+	while ((*p)[i] && (*p)[i] != '#' && (*p)[i] != '%' && (*p)[i] != '.'
+	&& (*p)[i] !='+')
 	{
 		if ((*p)[i] == 'h')
 		{
