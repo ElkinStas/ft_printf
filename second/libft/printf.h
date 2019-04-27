@@ -112,4 +112,8 @@ void				ft_zerodigital2(t_flist **base, long long checkmin);
 void				ft_checkminx(long long z, t_flist **base, long long *checkmin);
 void	ft_pointerindent(t_flist *base, int check, int *flag);
 void	ft_zerodigital3(t_flist **base, long long checkmin, int *flag);
+void	countreshbig(long long z, t_flist *base, int check, long long checkmin);
+void	ft_zerodigitalbig(t_flist **base, long long checkmin);
+void	ft_zerooct(t_flist **base, long long checkmin);
+
 #endif

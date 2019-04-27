@@ -112,9 +112,9 @@ void	functionsixbig(va_list ap, t_flist *base)
 	if (base->point > 0)
 		base->indent = base->indent - base->point;
 	if (base->point > 0)
-		ft_zerodigital2(&base, checkmin);
+		ft_zerodigitalbig(&base, checkmin);
 	if (base->resh == 1 && checkmin != 0)
-		countresh(z, base, check, checkmin);
+		countreshbig(z, base, check, checkmin);
 	else	if (base->indent > 0)
 	{
 		ft_loputnbrindentux(z, base, &check);
