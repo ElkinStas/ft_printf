@@ -25,10 +25,10 @@ void	functiondigitalu(va_list ap, t_flist *base)
 	ft_checkminu(z, &base, &checkmin);
 	if (base->point > 0)
 		base->indent = base->indent - base->point;
-	if (base->sign2 == '+')
-		functionindent5(base, &check);
+	//if (base->sign2 == '+')
+	//	functionindent5(base, &check);
 	if (base->point > 0)
-		ft_zerodigital(&base, checkmin);
+		ft_zerodigital2(&base, checkmin);
 	if (base->indent > 0)
 	{
 		ft_loputnbrindentu(z, base, &check);
@@ -67,29 +67,52 @@ void	ft_loputnbr(void *z, t_flist **base)
 	((*base)->count)++;
 }
 
-void	functflag4(t_flist *base, int *l)
+void	functflag4(t_flist *base, int *l, int *biggi)
 {
 	if (*l == 0)
 	{
 		base->spec = 2;
+		(*biggi)++;
 		*l = 1;
 	}
 	else
-		base->spec = 4;
+		{
+			base->spec = 4;
+			(*biggi)++;
+		}
 }
 
-void	functflag3(t_flist *base, int *h)
+void	functflag3(t_flist *base, int *h, int *biggi)
 {
 	if (*h == 0)
 	{
-		base->spec = 1;
+			if (base->spec != 2 && base->spec != 4)
+			{
+				base->spec = 1;
+				(*biggi)++;
+			}
+			else
+			{
+				(*biggi)++;
+			}
+
 		*h = 1;
 	}
 	else
-		base->spec = 3;
+		{
+			if (base->spec != 2 && base->spec != 4)
+			{
+				base->spec = 3;
+				(*biggi)++;
+			}
+			else
+			{
+				(*biggi)++;
+			}
+		}
 }
 
-void	functflag2(char **p, t_flist *base)
+void	functflag2(char **p, t_flist *base, int *biggi)
 {
 	int					i;
 	int					h;
@@ -98,19 +121,25 @@ void	functflag2(char **p, t_flist *base)
 	i = 0;
 	h = 0;
 	l = 0;
-	while ((*p)[i] && (*p)[i] != '#' && (*p)[i] != '%' && (*p)[i] != '.'
-	&& (*p)[i] !='+')
+	if  (!((**p) >= '0' && (**p) <= '9'))
 	{
-		if ((*p)[i] == 'h')
+		while ((*p)[i] && (*p)[i] != '#' && (*p)[i] != '%' && (*p)[i] != '.'
+		&& (*p)[i] !='+')
 		{
-			functflag3(base, &h);
+			if ((*p)[i] == 'h' )
+			{
+				functflag3(base, &h, &(*biggi));
+			}
+			else	if ((*p)[i] == 'l')
+			{
+				functflag4(base, &l, &(*biggi));
+			}
+			else	if ((*p)[i] == 'L')
+			{
+			 base->spec = 5;
+			 (*biggi)++;
+			}
+			i++;
 		}
-		else	if ((*p)[i] == 'l')
-		{
-			functflag4(base, &l);
-		}
-		else	if ((*p)[i] == 'L')
-			base->spec = 5;
-		i++;
 	}
 }

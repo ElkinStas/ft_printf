@@ -14,12 +14,15 @@
 
 void	fucnctcheck(char **p, t_flist *base)
 {
-	functflag2(p, base);
+	int					biggi;
+
+	biggi = 0;
+	functflag2(p, base,&biggi);
 	if ((base->spec == 1 || base->spec == 5 || base->spec == 2)\
 			&& (base->match = 1))
-		(*p)++;
+		(*p)= (*p) + biggi;
 	if ((base->spec == 3 || base->spec == 4) && (base->match = 1))
-		(*p) = (*p) + 2;
+		(*p)= (*p) + biggi;
 }
 
 void	ft_checkstr(char *sval, int *check)

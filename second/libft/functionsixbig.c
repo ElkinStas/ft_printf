@@ -18,9 +18,10 @@ void	functionsix(va_list ap, t_flist *base)
 	int			check;
 	long long	checkmin;
 
+
 	check = 0;
 	z = va_arg(ap, long);
-	ft_checkmin(z, &base, &checkmin);
+	ft_checkminx(z, &base, &checkmin);
 	ft_checklongitudex(z, &base, checkmin);
 	if (base->point > 0)
 		base->indent = base->indent - base->point;
@@ -48,10 +49,16 @@ void	ft_check_indent3(t_flist **base, unsigned long long y)
 			ft_putchar(' ');
 			((*base)->count)++;
 		}
+		else if ((y == 0 && (*base)->point2 == '.' && (*base)->point != 0))
+			{
+				ft_putchar('0');
+				((*base)->count)++;
+			}
 	}
-	else	if ((y != 0) || (*base)->point2 != '.')
+	else	if ((y != 0) || (*base)->point2 != '.'
+			|| (y == 0 && (*base)->point2 == '.'))
 	{
-		ft_convertation2((long long)y);
+		ft_convertation2((unsigned long long)y);
 		((*base)->count)++;
 	}
 }
@@ -100,12 +107,12 @@ void	functionsixbig(va_list ap, t_flist *base)
 
 	check = 0;
 	z = va_arg(ap, long);
-	ft_checkmin(z, &base, &checkmin);
+	ft_checkminx(z, &base, &checkmin);
 	ft_checklongitudex(z, &base, checkmin);
 	if (base->point > 0)
 		base->indent = base->indent - base->point;
 	if (base->point > 0)
-		ft_zerodigital(&base, checkmin);
+		ft_zerodigital2(&base, checkmin);
 	if (base->resh == 1 && checkmin != 0)
 		countresh(z, base, check, checkmin);
 	else	if (base->indent > 0)

@@ -95,7 +95,7 @@ int					ft_count_sympoint(long double f, t_flist *flags);
 void				ft_checklongitudex(long long z, t_flist **base,\
 		long long checkmin);
 void				ft_loputnbrindentux(long long z, t_flist *base, int *check);
-void				functflag2(char **p, t_flist *base);
+void				functflag2(char **p, t_flist *base, int *h);
 void				ft_checklongitudeo(long long z, t_flist **base,\
 		long long checkmin);
 void				ft_loputnbrindent(long long z, t_flist *base, int *check);
@@ -108,6 +108,8 @@ int					ft_check_last_symb(long double fl, int len);
 void				countresh2(long long z, t_flist *base, int check,\
 		long long checkmin);
 void				ft_func_check_symb2(va_list ap, char *p, t_flist *base);
-void				ft_zerodigital2(t_flist **base, int checkmin);
-
+void				ft_zerodigital2(t_flist **base, long long checkmin);
+void				ft_checkminx(long long z, t_flist **base, long long *checkmin);
+void	ft_pointerindent(t_flist *base, int check, int *flag);
+void	ft_zerodigital3(t_flist **base, long long checkmin, int *flag);
 #endif

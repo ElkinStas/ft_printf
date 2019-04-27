@@ -16,10 +16,32 @@ void	functionpointer(va_list ap, t_flist *base)
 {
 	void	*z;
 
-	base->count = base->count + 2;
+	int			check;
+	long long	checkmin;
+	int			flag;
+	check = 0;
+	flag = 0;
 	z = va_arg(ap, void*);
-	ft_putstr("0x");
+	base->count = base->count + 2;
+
+	ft_checkminx((long long)z, &base, &checkmin);
+	ft_checklongitudex((long long)z, &base, checkmin);
+	base->longitude = base->longitude + 2;
+	if (base->point > 0)
+		base->indent = base->indent - base->point;
+	if (base->point > 0)
+		ft_zerodigital3(&base, checkmin, &flag);
+
+	else	if (base->indent > 0)
+	{
+		ft_loputnbrindentux((long long)z, base, &check);
+		check = check + 2;
+		ft_pointerindent(base, check, &flag);
+	}
+	if(flag == 0)
+		ft_putstr("0x");
 	ft_putpointer(z, &base);
+	ft_minus2(&base);
 }
 
 void	ft_point(char **p, t_flist *base)

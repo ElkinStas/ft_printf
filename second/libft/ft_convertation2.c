@@ -37,6 +37,12 @@ void	ft_puteight(long long z, t_flist **base)
 		ft_putchar((char)(a % 8 + '0'));
 		((*base)->count)++;
 	}
+	else if ((y != 0) || (*base)->point2 != '.'
+			|| (y == 0 && (*base)->point2 == '.'))
+			{
+				ft_putchar('0');
+				((*base)->count)++;
+			}
 }
 
 void	ft_loputnbrindentuo(long long z, t_flist *base, int *check)

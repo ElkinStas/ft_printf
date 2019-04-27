@@ -14,16 +14,16 @@
 
 void	ft_checklongitudex(long long z, t_flist **base, long long checkmin)
 {
-	if (((*base)->spec == 1) && (checkmin = (short)z))
-		checkmin = (short)checkmin;
-	else if (((*base)->spec == 2) && (checkmin = (long)z))
-		checkmin = (long)checkmin;
-	else if ((*base)->spec == 4 && (checkmin = (long long)z))
-		checkmin = (long long)checkmin;
-	else if ((*base)->spec == 0 && (checkmin = (int)z))
-		checkmin = (int)checkmin;
-	else if ((*base)->spec == 3 && (checkmin = (char)z))
-		checkmin = (char)checkmin;
+	if (((*base)->spec == 1) && (checkmin = (unsigned short)z))
+		checkmin = (unsigned short)checkmin;
+	else if (((*base)->spec == 2) && (checkmin = (unsigned long)z))
+		checkmin = (unsigned long)checkmin;
+	else if ((*base)->spec == 4 && (checkmin = (unsigned long long)z))
+		checkmin = (unsigned long long)checkmin;
+	else if ((*base)->spec == 0 && (checkmin = (unsigned int)z))
+		checkmin = (unsigned int)checkmin;
+	else if ((*base)->spec == 3 && (checkmin = (unsigned char)z))
+		checkmin = (unsigned char)checkmin;
 	while ((checkmin) != 0)
 	{
 		(checkmin) = (checkmin) / 16;

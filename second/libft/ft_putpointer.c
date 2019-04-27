@@ -96,8 +96,8 @@ void	ft_convertationpointer(unsigned long long y)
 void	ft_putpointer(void *z, t_flist **base)
 {
 	unsigned long long	y;
-
-	if (((*base)->spec == 1) && (y = (unsigned short)z))
+	y = (unsigned long long)z;
+	/*if (((*base)->spec == 1) && (y = (unsigned short)z))
 		y = (unsigned short)y;
 	else if (((*base)->spec == 2) && (y = (unsigned long)z))
 		y = (unsigned long)y;
@@ -106,7 +106,7 @@ void	ft_putpointer(void *z, t_flist **base)
 	else if ((*base)->spec == 0 && (y = (unsigned long long)z))
 		y = (unsigned long long)y;
 	else if ((*base)->spec == 3 && (y = (char)z))
-		y = (unsigned char)y;
+		y = (unsigned char)y;*/
 	if (y >= 16)
 		ft_putpointer((void*)(y / 16), base);
 	y = y % 16;

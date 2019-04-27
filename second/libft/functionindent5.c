@@ -25,13 +25,35 @@ void	ft_uputnbr(void *z, t_flist **base)
 		y = (unsigned long long)y;
 	else	if ((*base)->spec == 0 && (y = (unsigned int)z))
 		y = (unsigned int)y;
-	else	if ((*base)->spec == 3 && (y = (char)z))
-		y = (char)y;
+	else	if ((*base)->spec == 3 && (y = (unsigned char)z))
+		y = (unsigned char)y;
 	a = y;
 	if (a >= 10)
 		ft_uputnbr((void*)(a / 10), base);
+
+	if (y == 0 && (*base)->point2 == '.' && (*base)->zero != '0')
+	{
+		if ((*base)->indent2 != '0')
+		{
+			ft_putchar(' ');
+			((*base)->count)++;
+		}
+		else if ((y == 0 && (*base)->point2 == '.' && (*base)->point != 0))
+			{
+				ft_putchar('0');
+				((*base)->count)++;
+			}
+	}
+	else	if ((y != 0) || (*base)->point2 != '.'
+			|| (y == 0 && (*base)->point2 == '.'))
+	{
+
 	ft_putchar((char)(a % 10 + '0'));
-	((*base)->count)++;
+		((*base)->count)++;
+	}
+
+
+
 }
 
 void	ft_checklongitudeu(void *z, t_flist **base, \

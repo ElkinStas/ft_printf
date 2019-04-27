@@ -96,7 +96,9 @@ void	countresh2(long long z, t_flist *base, int check, long long checkmin)
 {
 	base->count = base->count + 2;
 	check = 2;
-	if (base->zero == '0')
+	if (base->zero == '0' && base->resh != 1)
+		ft_putstr("0x");
+	if (base->zero == '0' && base->resh == 1 && base->point < 0)
 		ft_putstr("0x");
 	if (base->indent > 0)
 	{

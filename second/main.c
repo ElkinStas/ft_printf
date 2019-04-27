@@ -1,11 +1,14 @@
 #include "libft/libft.h"
 #include "libft/printf.h"
 #include <stdio.h>
+
+
 int main()
 {
-    long long a = 99999999999999;
 
-   /*printf("%d", printf("the %x", 1));
+
+   printf("1\n");
+    printf("%d", printf("the %x", 1));
     printf("\n");
     printf("%d", ft_printf("the %x", 1));
     printf("\n");
@@ -86,13 +89,13 @@ int main()
     printf("%d", printf("%+x", 0));
     printf("\n");
     printf("%d", ft_printf("%+x", 0));
-    printf("\n");*/
-
-    /*printf("15\n");
-    long long l = 4242424242424242424;
-    printf("%d", printf("%+llx", 4242424242424242424));
     printf("\n");
-    printf("%d", ft_printf("%+llx", 4242424242424242424));
+
+    printf("15\n");
+    long long l = 4242424242424242424;
+    printf("%d", printf("%#+llx", l));
+    printf("\n");
+    printf("%d", ft_printf("%#+llx", l));
     printf("\n");
     printf("16\n");
     printf("%d", printf("% +x", 42));
@@ -221,15 +224,15 @@ int main()
     printf("\n");
 
     printf("37\n");
-    printf("%d", printf("%-05x", 42));
+    printf("%d", printf("%#-05x", 42));
     printf("\n");
-    printf("%d", ft_printf("%-05x", 42));
+    printf("%d", ft_printf("%#-05x", 42));
     printf("\n");
 
     printf("38\n");
-    printf("%d", printf("%-5x", -42));
+    printf("%d", printf("%#-5x", -42));
     printf("\n");
-    printf("%d", ft_printf("%-5x", -42));
+    printf("%d", ft_printf("%#-5x", -42));
     printf("\n");
 
     printf("39\n");
@@ -295,9 +298,9 @@ int main()
     printf("\n");
 
     printf("49\n");
-    printf("%d", printf("%lx", -2147483648));
+    printf("%d", printf("%#lx", -2147483648));
     printf("\n");
-    printf("%d", ft_printf("%lx", -2147483648));
+    printf("%d", ft_printf("%#lx", -2147483648));
     printf("\n");
 
     printf("50\n");
@@ -307,15 +310,15 @@ int main()
     printf("\n");
 
     printf("51\n");
-    printf("%d", printf("%lx", -2147483649));
+    printf("%d", printf("%#lx", -2147483649));
     printf("\n");
-    printf("%d", ft_printf("%lx", -2147483649));
+    printf("%d", ft_printf("%#lx", -2147483649));
     printf("\n");
 
     printf("52\n");
-    printf("%d", printf("%llx", 9223372036854775807));
+    printf("%d", printf("%#llx", 9223372036854775807));
     printf("\n");
-    printf("%d", ft_printf("%llx", 9223372036854775807));
+    printf("%d", ft_printf("%#llx", 9223372036854775807));
     printf("\n");
 
     printf("53\n");
@@ -349,45 +352,45 @@ int main()
     printf("\n");
 
     printf("58\n");
-    printf("%d", printf("%4.15x", 42));
+    printf("%d", printf("%4.15#x", 42));
     printf("\n");
-    printf("%d", ft_printf("%4.15x", 42));
-    printf("\n");*/
+    printf("%d", ft_printf("%4.15#x", 42));
+    printf("\n");
 
     printf("59\n");
-    printf("%d", printf("%.2x", 4242));
+    printf("%d", printf("%.2#x", 4242));
     printf("\n");
-    printf("%d", ft_printf("%.2x", 4242));
+    printf("%d", ft_printf("%.2#x", 4242));
     printf("\n");
 
-    /*printf("60\n");
-    printf("%d", printf("%.10x", 4242));
+    printf("60\n");
+    printf("%d", printf("%.10#x", 4242));
     printf("\n");
-    printf("%d", ft_printf("%.10x", 4242));
+    printf("%d", ft_printf("%.10#x", 4242));
     printf("\n");
 
     printf("61\n");
-    printf("%d", printf("%10.5x", 4242));
+    printf("%d", printf("%10.5#x", 4242));
     printf("\n");
-    printf("%d", ft_printf("%10.5x", 4242));
+    printf("%d", ft_printf("%10.5#x", 4242));
     printf("\n");
 
     printf("62\n");
-    printf("%d", printf("%-10.5x", 4242));
+    printf("%d", printf("%-10.5#x", 4242));
     printf("\n");
-    printf("%d", ft_printf("%-10.5x", 4242));
+    printf("%d", ft_printf("%-10.5#x", 4242));
     printf("\n");
 
     printf("63\n");
-    printf("%d", printf("% 10.5x", 4242));
+    printf("%d", printf("% 10.5#x", 4242));
     printf("\n");
-    printf("%d", ft_printf("% 10.5x", 4242));
+    printf("%d", ft_printf("% 10.5#x", 4242));
     printf("\n");
 
     printf("64\n");
-    printf("%d", printf("%+10.5x", 4242));
+    printf("%d", printf("%+10.5#x", 4242));
     printf("\n");
-    printf("%d", ft_printf("%+10.5x", 4242));
+    printf("%d", ft_printf("%+10.5#x", 4242));
     printf("\n");
 
     printf("65\n");
@@ -403,39 +406,40 @@ int main()
     printf("\n");
 
     printf("67\n");
-    printf("%d", printf("%03.2x", 1));
+    printf("%d", printf("%03.2#x", 1));
     printf("\n");
-    printf("%d", ft_printf("%03.2x", 1));
+    printf("%d", ft_printf("%03.2#x", 1));
     printf("\n");
 
     printf("68\n");
-    printf("%d", printf("%03.2x", -1));
+    printf("%d", printf("%03.2#x", -1));
     printf("\n");
-    printf("%d", ft_printf("%03.2x", -1));
+    printf("%d", ft_printf("%03.2#x", -1));
     printf("\n");
 
     printf("69\n");
-    printf("%d", printf("@moulitest: %.10x", -42));
+    printf("%d", printf("@moulitest: %.10#x", -42));
     printf("\n");
-    printf("%d", ft_printf("@moulitest: %.10x", -42));
+    printf("%d", ft_printf("@moulitest: %.10#x", -42));
     printf("\n");
 
     printf("70\n");
-    printf("%d", printf("@moulitest: %.x %.0x", 42, 43));
+    printf("%d", printf("@moulitest: %.#x %.0#x", 42, 43));
     printf("\n");
-    printf("%d", ft_printf("@moulitest: %.x %.0x", 42, 43));
+    printf("%d", ft_printf("@moulitest: %.#x %.0#x", 42, 43));
     printf("\n");
 
     printf("71\n");
-    printf("%d", printf("@moulitest: %.x %.0x", 0, 0));
+    printf("%d", printf("@moulitest: %.#x %.0#x", 0, 0));
     printf("\n");
-    printf("%d", ft_printf("@moulitest: %.x %.0x", 0, 0));
+    printf("%d", ft_printf("@moulitest: %.#x %.0#x", 0, 0));
     printf("\n");
 
     printf("72\n");
-    printf("%d", printf("@moulitest: %5.x %5.0x", 0, 0));
+    printf("%d", printf("@moulitest: %5.#x %5.0#x", 0, 0));
     printf("\n");
-    printf("%d", ft_printf("@moulitest: %5.x %5.0x", 0, 0));
-    printf("\n");*/
-    return(0);
+    printf("%d", ft_printf("@moulitest: %5.#x %5.0#x", 0, 0));
+    printf("\n");
+
+    return (0);
 }
