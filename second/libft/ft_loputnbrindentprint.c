@@ -94,6 +94,8 @@ void	ft_loputnbrindentprint(t_flist *base, int check, int checkmin)
 	int	i;
 
 	i = base->indent;
+	if (base->space == '1' && ((base)->sign2 != '+' && (base)->sign2 != '-' && checkmin >= 0))
+		i--;
 	if (check < i)
 	{
 		i = i - check;

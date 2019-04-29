@@ -165,8 +165,11 @@ void	ft_zerooct(t_flist **base, long long checkmin)
 	(*base)->zero = '0';
 	if (checkmin == 0)
 		(*base)->point = (*base)->point -1;
-	if ((*base)->resh == 1 && checkmin != 0)
-		ft_putstr("0");
+	if ((*base)->resh == 1 && checkmin != 0 && (*base)->indent >= 0)
+		{
+			ft_putstr("0");
+			(*base)->count++;
+		}
 	    while ((*base)->point > 0 && checkmin >= 0 )
 	{
 		ft_putchar('0');

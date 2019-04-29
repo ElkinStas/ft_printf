@@ -75,7 +75,7 @@ void	functionstring(va_list ap, t_flist *base)
 
 void	ft_indent4(t_flist **base)
 {
-	if ((*base)->indent2 != '0')
+	if ((*base)->indent2 != '0' && (*base)->resh != 1)
 	{
 		ft_putchar(' ');
 		((*base)->count)++;

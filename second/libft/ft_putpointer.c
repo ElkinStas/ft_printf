@@ -18,7 +18,7 @@ void	ft_check_sign(t_flist **base, long long checkmin, int *check)
 		(*base)->indent = (*base)->indent - (*base)->point;
 	if ((*base)->sign2 == '+' && checkmin >= 0)
 	{
-		if ((*base)->zero == '0')
+		if ((*base)->zero == '0' && (*base)->point2 == '0')
 		{
 			ft_putchar('+');
 			(*base)->count++;
