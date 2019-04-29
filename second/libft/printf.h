@@ -115,5 +115,14 @@ void	ft_zerodigital3(t_flist **base, long long checkmin, int *flag);
 void	countreshbig(long long z, t_flist *base, int check, long long checkmin);
 void	ft_zerodigitalbig(t_flist **base, long long checkmin);
 void	ft_zerooct(t_flist **base, long long checkmin);
-
+void	ft_pointer(va_list ap, t_flist *base);
+void	ft_put_pointer(unsigned long long z, t_flist **base);
+void	ft_check_indent5(t_flist **base, unsigned long long y);
+void	ft_convertationP(unsigned long long y);
+void	ft_countresh_p(unsigned long long z, t_flist *base, int check, long long checkmin);
+void	ft_loputnbr_p(long long z, t_flist *base, int *check);
+void	ft_minus_p(t_flist **base);
+void	ft_checklongitudeP(t_flist **base, long long checkmin);
+void	ft_zerodigital5(t_flist **base, long long checkmin);
+void	ft_checkminP(long long z, long long *checkmin);
 #endif

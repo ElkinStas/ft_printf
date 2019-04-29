@@ -43,7 +43,7 @@ void	ft_func_check_symb1(va_list ap, char *p, t_flist *base)
 	}
 	if (*p == 'p' && (base->match = 1))
 	{
-		functionpointer(ap, base);
+		ft_pointer(ap, base);
 		base->work = 1;
 	}
 	if (*p == 'f' && (base->match = 1))
