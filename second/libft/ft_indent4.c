@@ -41,7 +41,7 @@ void	ft_printtext(char *sval, t_flist *base, int check)
 	if (base->point > 0 && check != 0)
 	{
 		base->indent = base->indent - base->point;
-		if (check != 0)
+		if (check != 0 && base->point <= check)
 			check = base->point;
 	}
 	if (base->indent > 0)

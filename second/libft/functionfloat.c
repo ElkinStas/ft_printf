@@ -12,14 +12,41 @@
 
 #include "printf.h"
 
+void	ft_loputnbrindent_float(t_flist *base, int check, int checkmin)
+{
+	int	i;
+
+
+	i = base->indent;
+
+	if (check < i)
+	{
+		i = i - base->longitude - check;
+		if (checkmin < 0 && base->zero == '0')
+		{
+			ft_putchar('-');
+			base->count++;
+		}
+		while (i > 0 && base->sign != '-')
+		{
+			if (base->zero == '0')
+				ft_putchar('0');
+			else
+				ft_putchar(' ');
+			i--;
+			base->count++;
+		}
+	}
+}
 void	functionfloat(va_list ap, t_flist *base)
 {
-	long long	checkmin;
 	int			i;
 	long double	f;
-	int			cop;
+	long long		cop;
 	int			count;
+	int			check;
 
+	check = 0;
 	count = 0;
 	i = 0;
 	f = 0.0;
@@ -32,10 +59,21 @@ void	functionfloat(va_list ap, t_flist *base)
 	floatconvert(&f, &base);
 	i = ft_single_part(f);
 	cop = (int)f;
-	ft_checkmin(cop, &base, &checkmin);
 	count = ft_count_sympoint(f, base);
+	base->longitude = i + count + 1;
+	base->point = base->point - base->longitude;
+	ft_check_sign(&base, cop, &check);
+	if (base->indent > 0)
+		ft_loputnbrindent_float(base, check, cop);
+	if (base->sign2 == '+' && cop >= 0 && base->zero != '0')
+	{
+		ft_putchar('+');
+		(base)->count++;
+	}
 	i = i + ft_print_accuracy(f, count);
 	if (i == 0)
 		i = 1;
+	if (base->sign == '-')
+		ft_minus2(&base);
 	base->count = base->count + i + count + 1;
 }

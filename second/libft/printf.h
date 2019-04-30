@@ -127,4 +127,6 @@ void	ft_zerodigital5(t_flist **base, long long checkmin);
 void	ft_checkminP(long long z, long long *checkmin);
 void	ft_loputnbrindentprintp(t_flist *base, int check, int checkmin);
 void	ft_checkmino(long long z, t_flist **base, long long *checkmin);
+void	ft_check_sign(t_flist **base, long long checkmin, int *check);
+
 #endif

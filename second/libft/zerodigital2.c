@@ -174,8 +174,8 @@ void	ft_zerodigitalbig(t_flist **base, long long checkmin)
 }
 void	ft_zerooct(t_flist **base, long long checkmin)
 {
-	if ((*base)->sign2 == '+' && checkmin > 0 && (*base)->resh != 1)
-		(*base)->longitude++;
+	//if ((*base)->sign2 == '+' && checkmin > 0 && (*base)->resh != 1)
+		//(*base)->longitude++;
 	if (checkmin < 0)
 		(*base)->longitude++;
 	(*base)->indent = (*base)->indent - ((*base)->longitude);

@@ -5,11 +5,9 @@
 
 int main()
 {
-  short int d = -32769;
-    long long l = 4242424242424242424;
-
-
- /*printf("01 stroka: %-+8.6d\n", -123);
+	/*int r = 2567;
+    printf("kolichestvo %d\n", ft_printf("02 stroka: %-10.3x\n", r));
+ printf("01 stroka: %-+8.6d\n", -123);
 	ft_printf("01 stroka: %-+8.6d\n", -123);
 	printf("02 stroka: % -+8.6d\n", -123);
 	ft_printf("02 stroka: % -+8.6d\n", -123);
@@ -171,13 +169,14 @@ int main()
 	ft_printf("39 stroka: % -8hho\n", (char)255);
 	printf("40 stroka: %9.5o\n", 345);
 	ft_printf("40 stroka: %9.5o\n", 345);
-*/
+
  char	*str = "hello";
 	 printf("kolichestvo %d\n", printf("01 stroka: %s\n", str));
-	 printf("kolichestvo %d\n", ft_printf("01 stroka: %s\n", str));
-	 printf("kolichestvo %d\n", printf("02 stroka: %15.6s\n", str));
-	 printf("kolichestvo %d\n", ft_printf("02 stroka: %15.6s\n", str));
-	 printf("kolichestvo %d\n", printf("03 stroka: %-15s\n", str));
+*/char	*str = "hello";
+ //printf("kolichestvo %d\n", ft_printf("01 stroka: %s\n", str));
+	 printf("kolichestvo %d\n", ft_printf("02 stroka: %15.06s\n", str));
+	 //printf("kolichestvo %d\n", ft_printf("02 stroka: %15.06s\n", str));
+	/* printf("kolichestvo %d\n", printf("03 stroka: %-15s\n", str));
 	 printf("kolichestvo %d\n", ft_printf("03 stroka: %-15s\n", str));
 	 printf("kolichestvo %d\n", printf("04 stroka: % -15s\n", str));
 	 printf("kolichestvo %d\n", ft_printf("04 stroka: % -15s\n", str));
@@ -186,7 +185,7 @@ int main()
 
  //тесты для pointer
 
-/*
+
 	printf("kolichestvo %d\n", printf("01 stroka: %p\n", str));
 	printf("kolichestvo %d\n", ft_printf("01 stroka: %p\n", str));
 	printf("kolichestvo %d\n", printf("02 stroka: %15.6p\n", str));
