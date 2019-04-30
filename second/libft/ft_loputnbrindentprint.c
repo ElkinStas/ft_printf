@@ -42,8 +42,8 @@ void	ft_checklongitudeo(long long z, t_flist **base, long long checkmin)
 		checkmin = (long long)checkmin;
 	else if ((*base)->spec == 0 && (checkmin = (int)z))
 		checkmin = (int)checkmin;
-	else if ((*base)->spec == 3 && (checkmin = (char)z))
-		checkmin = (char)checkmin;
+	else if ((*base)->spec == 3 && (checkmin = (unsigned char)z))
+		checkmin = (unsigned char)checkmin;
 	while ((checkmin) != 0)
 	{
 		(checkmin) = (checkmin) / 8;
@@ -92,10 +92,9 @@ void	ft_loputnbrindentu(void *z, t_flist *base, int *check)
 void	ft_loputnbrindentprint(t_flist *base, int check, int checkmin)
 {
 	int	i;
-
-
 	i = base->indent;
-
+ 	if((base)->indent > 0 && base->space == '1' && checkmin >= 0)
+		i--;
 	if (check < i)
 	{
 		i = i - check;

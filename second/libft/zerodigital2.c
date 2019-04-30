@@ -43,7 +43,32 @@ void	ft_zerodigital2(t_flist **base, long long checkmin)
 
 }
 
+void	ft_loputnbrindentprintp(t_flist *base, int check, int checkmin)
+{
+	int	i;
 
+
+	i = base->indent;
+
+	if (check < i)
+	{
+		i = i - check;
+		if (checkmin < 0 && base->zero == '0')
+		{
+			ft_putchar('-');
+			base->count++;
+		}
+		while (i > 0 && base->sign != '-')
+		{
+			if (base->zero == '0')
+				ft_putchar('0');
+			else
+				ft_putchar(' ');
+			i--;
+			base->count++;
+		}
+	}
+}
 
 void	ft_pointerindent(t_flist *base, int check, int *flag)
 {
@@ -121,8 +146,8 @@ void	countreshbig(long long z, t_flist *base, int check, long long checkmin)
 
 void	ft_zerodigitalbig(t_flist **base, long long checkmin)
 {
-	//if ((*base)->sign2 == '+' && checkmin > 0 && (*base)->resh != 1)
-		//(*base)->longitude++;
+	if ((*base)->sign2 == '+' && checkmin > 0 && (*base)->resh != 1)
+		(*base)->longitude++;
 	if (checkmin < 0)
 		(*base)->longitude++;
 	(*base)->indent = (*base)->indent - ((*base)->longitude);
@@ -149,14 +174,14 @@ void	ft_zerodigitalbig(t_flist **base, long long checkmin)
 }
 void	ft_zerooct(t_flist **base, long long checkmin)
 {
-	//if ((*base)->sign2 == '+' && checkmin > 0 && (*base)->resh != 1)
-		//(*base)->longitude++;
+	if ((*base)->sign2 == '+' && checkmin > 0 && (*base)->resh != 1)
+		(*base)->longitude++;
 	if (checkmin < 0)
 		(*base)->longitude++;
 	(*base)->indent = (*base)->indent - ((*base)->longitude);
 	if ((*base)->resh == 1 && (*base)->longitude >= (*base)->point)
 		(*base)->indent = (*base)->indent - 2;
-	while ((*base)->indent > 0 && (*base)->sign != '-')
+	while ((*base)->indent > 0 && (*base)->sign != '-' && checkmin >= 0)
 	{
 		ft_putchar(' ');
 		(*base)->count++;
@@ -346,10 +371,24 @@ void	ft_pointer(va_list ap, t_flist *base)
 	else	if (base->indent > 0)
 	{
 		ft_loputnbr_p((long long)z, base, &check);
-		ft_loputnbrindentprint(base, check, checkmin);
+		ft_loputnbrindentprintp(base, check, checkmin);
 	}
 	if ((base->resh == 1) && (base->count = base->count + 2))
 		ft_putstr("0x");
 	ft_put_pointer((unsigned long long)z, &base);
 	ft_minus_p(&base);
+}
+
+void	ft_checkmino(long long z, t_flist **base, long long *checkmin)
+{
+	if (((*base)->spec == 1) && (*checkmin = (short)z))
+		*checkmin = (short)*checkmin;
+	else	if (((*base)->spec == 2) && (*checkmin = (long)z))
+		*checkmin = (long)*checkmin;
+	else	if ((*base)->spec == 4 && (*checkmin = (long long)z))
+		*checkmin = (long long)*checkmin;
+	else	if ((*base)->spec == 0 && (*checkmin = (int)z))
+		*checkmin = (int)*checkmin;
+	else	if ((*base)->spec == 3 && (*checkmin = (unsigned char)z))
+		*checkmin = (unsigned char)*checkmin;
 }

@@ -100,8 +100,8 @@ void	functioneight(va_list ap, t_flist *base)
 	long long	checkmin;
 
 	check = 0;
-	z = va_arg(ap, long long int);
-	ft_checkmin(z, &base, &checkmin);
+	z = va_arg(ap, long long);
+	ft_checkmino(z, &base, &checkmin);
 	ft_checklongitudeo(z, &base, checkmin);
 	if (base->point > 0)
 		base->indent = base->indent - base->point;
@@ -112,7 +112,7 @@ void	functioneight(va_list ap, t_flist *base)
 	else if (base->indent > 0)
 	{
 		ft_loputnbrindentuo(z, base, &check);
-		ft_loputnbrindentprint(base, check, checkmin);
+		ft_loputnbrindentprintp(base, check, checkmin);
 	}
 	if (base->resh == 1 && checkmin != 0 && (base->count++))
 		ft_putstr("0");
