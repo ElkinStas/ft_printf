@@ -6,7 +6,7 @@
 /*   By: bhudson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 18:42:00 by bhudson           #+#    #+#             */
-/*   Updated: 2019/04/10 19:49:26 by ptorchbu         ###   ########.fr       */
+/*   Updated: 2019/05/01 17:40:26 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,16 @@ void	ft_indentd2(t_flist **base, int check)
 	int	i;
 
 	i = (*base)->indent;
-	if ((*base)->indent > check)
+	if ((*base)->indent > 0)
 	{
 		if ((*base)->point2 != '.')
 			i = i - check;
 		while (i > 0)
 		{
-			ft_putchar(' ');
+			if ((*base)->zero == 1 || (*base)->zero == '0')
+				ft_putchar('0');
+			else
+				ft_putchar(' ');
 			i--;
 			(*base)->count++;
 		}
@@ -92,8 +95,9 @@ void	ft_loputnbrindentu(void *z, t_flist *base, int *check)
 void	ft_loputnbrindentprint(t_flist *base, int check, int checkmin)
 {
 	int	i;
+
 	i = base->indent;
- 	if((base)->indent > 0 && base->space == '1' && checkmin >= 0)
+	if ((base)->indent > 0 && base->space == '1' && checkmin >= 0)
 		i--;
 	if (check < i)
 	{

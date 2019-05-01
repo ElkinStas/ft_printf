@@ -6,7 +6,7 @@
 /*   By: bhudson <bhudson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 18:24:37 by bhudson           #+#    #+#             */
-/*   Updated: 2019/04/24 15:58:13 by bhudson          ###   ########.fr       */
+/*   Updated: 2019/05/01 20:07:49 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void	ft_puteight(long long z, t_flist **base, int checkmin)
 	}
 	else if ((y != 0) || (*base)->point2 != '.'
 			|| (y == 0 && (*base)->point2 == '.'))
-			{
-				ft_putchar('0');
-				((*base)->count)++;
-			}
+	{
+		ft_putchar('0');
+		((*base)->count)++;
+	}
 }
 
 void	ft_loputnbrindentuo(long long z, t_flist *base, int *check)
@@ -66,30 +66,28 @@ void	ft_loputnbrindentuo(long long z, t_flist *base, int *check)
 
 void	ft_count_resh3(long long z, t_flist *base,\
 		int check, long long checkmin)
-
 {
-
 	check = 2;
 	if (base->zero == '0' && base->resh != 1)
-		{
-			ft_putstr("0");
-			base->count ++;
-			}
+	{
+		ft_putstr("0");
+		base->count++;
+	}
 	if (base->zero == '0' && base->resh == 1 && base->point < 0)
-		{
-			ft_putstr("0");
-			base->count ++;
-		}
+	{
+		ft_putstr("0");
+		base->count++;
+	}
 	if (base->indent > 0)
 	{
 		ft_loputnbrindentux(z, base, &check);
 		ft_loputnbrindentprint(base, check, checkmin);
 	}
 	if (base->zero != '0' && checkmin != 0)
-		{
-			ft_putstr("0");
-			base->count ++;
-		}
+	{
+		ft_putstr("0");
+		base->count++;
+	}
 	base->resh = 0;
 }
 
@@ -118,11 +116,8 @@ void	functioneight(va_list ap, t_flist *base)
 		ft_putstr("0");
 	ft_puteight(z, &base, checkmin);
 	ft_minus2(&base);
-	base ->resh = 0;
-
+	base->resh = 0;
 }
-
-
 
 void	ft_convertation2(long long y)
 {

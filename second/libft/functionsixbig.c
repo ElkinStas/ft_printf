@@ -6,7 +6,7 @@
 /*   By: bhudson <bhudson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 15:39:42 by ptorchbu          #+#    #+#             */
-/*   Updated: 2019/04/24 17:44:48 by bhudson          ###   ########.fr       */
+/*   Updated: 2019/05/01 17:30:29 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	functionsix(va_list ap, t_flist *base)
 	long long	z;
 	int			check;
 	long long	checkmin;
-
 
 	check = 0;
 	z = va_arg(ap, long);
@@ -36,21 +35,7 @@ void	functionsix(va_list ap, t_flist *base)
 	}
 	if ((base->resh == 1 && checkmin != 0) && (base->count = base->count + 2))
 		ft_putstr("0x");
-	if (z == 0 && base->point2 == '.' && base->zero != '0')
-	{
-		if (base->indent2 != '0')
-		{
-			ft_putchar(' ');
-			base->count++;
-		}
-		else if ((z == 0 && base->point2 == '.' && base->point != 0))
-			{
-				ft_putchar('0');
-				base->count++;
-			}
-	}
-	else
-		ft_putsix(z, &base);
+	ft_putsix(z, &base);
 	ft_minus2(&base);
 }
 
@@ -64,10 +49,10 @@ void	ft_check_indent3(t_flist **base, unsigned long long y)
 			((*base)->count)++;
 		}
 		else if ((y == 0 && (*base)->point2 == '.' && (*base)->point != 0))
-			{
-				ft_putchar('0');
-				((*base)->count)++;
-			}
+		{
+			ft_putchar('0');
+			((*base)->count)++;
+		}
 	}
 	else	if ((y != 0) || (*base)->point2 != '.'
 			|| (y == 0 && (*base)->point2 == '.'))

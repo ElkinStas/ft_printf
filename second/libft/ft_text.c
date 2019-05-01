@@ -6,7 +6,7 @@
 /*   By: bhudson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:18:49 by bhudson           #+#    #+#             */
-/*   Updated: 2019/04/10 19:24:33 by bhudson          ###   ########.fr       */
+/*   Updated: 2019/05/01 17:42:51 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ void	ft_plus1(char **p, t_flist *base)
 
 void	ft_minus2(t_flist **base)
 {
-	if ((*base)->signf > (*base)->longitude)
+	if ((*base)->signf > ((*base)->count - (*base)->longitude2))
 	{
-		(*base)->signf = (*base)->signf - (*base)->longitude;
+		(*base)->signf = (*base)->signf -\
+			((*base)->count - (*base)->longitude2);
 		while ((*base)->signf > 0)
 		{
 			ft_putchar(' ');
@@ -87,6 +88,7 @@ void	ft_text(char **p, t_flist *base)
 	{
 		ft_putchar(**p);
 		(base->count)++;
+		(base->longitude2)++;
 		i++;
 		(*p)++;
 	}

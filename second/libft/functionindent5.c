@@ -6,7 +6,7 @@
 /*   By: ptorchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 18:58:15 by ptorchbu          #+#    #+#             */
-/*   Updated: 2019/04/10 19:11:01 by ptorchbu         ###   ########.fr       */
+/*   Updated: 2019/05/01 18:20:57 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,43 +17,28 @@ void	ft_uputnbr(void *z, t_flist **base)
 	unsigned long long	y;
 	unsigned long long	a;
 
-	if (((*base)->spec == 1) && (y = (unsigned short)z))
-		y = (unsigned short)y;
-	else	if (((*base)->spec == 2) && (y = (unsigned long)z))
-		y = (unsigned long)y;
-	else	if ((*base)->spec == 4 && (y = (unsigned long long)z))
-		y = (unsigned long long)y;
-	else	if ((*base)->spec == 0 && (y = (unsigned int)z))
-		y = (unsigned int)y;
-	else	if ((*base)->spec == 3 && (y = (unsigned char)z))
-		y = (unsigned char)y;
+	unsconvert(z, &y, base);
 	a = y;
 	if (a >= 10)
 		ft_uputnbr((void*)(a / 10), base);
-
 	if (y == 0 && (*base)->point2 == '.' && (*base)->zero != '0')
 	{
-		if ((*base)->indent2 != '0')
+		if ((*base)->indent2 != '0' && ((*base)->count)++)
 		{
 			ft_putchar(' ');
-			((*base)->count)++;
 		}
 		else if ((y == 0 && (*base)->point2 == '.' && (*base)->point != 0))
-			{
-				ft_putchar('0');
-				((*base)->count)++;
-			}
+		{
+			ft_putchar('0');
+			((*base)->count)++;
+		}
 	}
 	else	if ((y != 0) || (*base)->point2 != '.'
 			|| (y == 0 && (*base)->point2 == '.'))
 	{
-
-	ft_putchar((char)(a % 10 + '0'));
+		ft_putchar((char)(a % 10 + '0'));
 		((*base)->count)++;
 	}
-
-
-
 }
 
 void	ft_checklongitudeu(void *z, t_flist **base, \

@@ -6,7 +6,7 @@
 /*   By: ptorchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 15:59:23 by ptorchbu          #+#    #+#             */
-/*   Updated: 2019/04/10 16:09:08 by ptorchbu         ###   ########.fr       */
+/*   Updated: 2019/05/01 17:33:47 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	fucnctcheck(char **p, t_flist *base)
 	int					biggi;
 
 	biggi = 0;
-	functflag2(p, base,&biggi);
+	functflag2(p, base, &biggi);
 	if ((base->spec == 1 || base->spec == 5 || base->spec == 2)\
 			&& (base->match = 1))
-		(*p)= (*p) + biggi;
+		(*p) = (*p) + biggi;
 	if ((base->spec == 3 || base->spec == 4) && (base->match = 1))
-		(*p)= (*p) + biggi;
+		(*p) = (*p) + biggi;
 }
 
 void	ft_checkstr(char *sval, int *check)
@@ -40,13 +40,16 @@ void	ft_printtext(char *sval, t_flist *base, int check)
 	ft_checkstr(sval, &check);
 	if (base->point > 0 && check != 0)
 	{
-		base->indent = base->indent - base->point;
-		if (check != 0)
+		if (check < base->point)
+			base->indent = base->indent - check;
+		else
+			base->indent = base->indent - base->point;
+		if (check != 0 && base->point <= check)
 			check = base->point;
 	}
 	if (base->indent > 0)
 		ft_indentd2(&base, check);
-	while (check > 0)
+	while (check > 0 && base->point != 0)
 	{
 		ft_putchar(*sval);
 		sval++;
@@ -66,8 +69,13 @@ void	functionstring(va_list ap, t_flist *base)
 	sval = va_arg(ap, char *);
 	if (sval == NULL)
 	{
-		ft_putstr("(null)");
-		(base->count) = (base->count) + 6;
+		if (base->zero == 1)
+		ft_indentd2(&base, check);
+		else
+		{
+			ft_putstr("(null)");
+			(base->count) = (base->count) + 6;
+		}
 	}
 	else
 		ft_printtext(sval, base, check);

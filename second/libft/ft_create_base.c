@@ -6,43 +6,11 @@
 /*   By: ptorchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:15:11 by ptorchbu          #+#    #+#             */
-/*   Updated: 2019/04/10 19:21:32 by ptorchbu         ###   ########.fr       */
+/*   Updated: 2019/05/01 17:31:12 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-void	functionpointer(va_list ap, t_flist *base)
-{
-	void	*z;
-
-	int			check;
-	long long	checkmin;
-	int			flag;
-	check = 0;
-	flag = 0;
-	z = va_arg(ap, void*);
-	base->count = base->count + 2;
-
-	ft_checkminx((long long)z, &base, &checkmin);
-	ft_checklongitudex((long long)z, &base, checkmin);
-	base->longitude = base->longitude + 2;
-	if (base->point > 0)
-		base->indent = base->indent - base->point;
-	if (base->point > 0)
-		ft_zerodigital3(&base, checkmin, &flag);
-
-	else	if (base->indent > 0)
-	{
-		ft_loputnbrindentux((long long)z, base, &check);
-		check = check + 2;
-		ft_pointerindent(base, check, &flag);
-	}
-	if(flag == 0)
-		ft_putstr("0x");
-	ft_putpointer(z, &base);
-	ft_minus2(&base);
-}
 
 void	ft_point(char **p, t_flist *base)
 {
@@ -63,6 +31,8 @@ void	ft_point(char **p, t_flist *base)
 	}
 	if (base->point == 0)
 		(*p)--;
+	if (base->zero == '0')
+		base->zero = 1;
 }
 
 void	ft_space(t_flist *base)
@@ -111,4 +81,5 @@ void	ft_create_base(t_flist *base)
 	base->minus = '0';
 	base->indent2 = '0';
 	base->resh = 0;
+	base->longitude2 = 0;
 }

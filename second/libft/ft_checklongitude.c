@@ -22,7 +22,7 @@ void	ft_indentdchar(t_flist **base)
 		i = (*base)->indent - i;
 		while (i > 0)
 		{
-			if ((*base)->zero == '0')
+			if ((*base)->zero == '0' || (*base)->zero == 1)
 				ft_putchar('0');
 			else
 				ft_putchar(' ');

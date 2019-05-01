@@ -6,7 +6,7 @@
 /*   By: ptorchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 18:44:55 by ptorchbu          #+#    #+#             */
-/*   Updated: 2019/04/10 18:56:06 by ptorchbu         ###   ########.fr       */
+/*   Updated: 2019/05/01 17:41:21 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,45 +71,13 @@ void	functionper(t_flist *base)
 	if (base->indent > 0)
 		ft_indentdchar(&base);
 	ft_putchar('%');
+	base->longitude++;
 	base->count++;
 	ft_minus2(&base);
 }
 
-void	ft_convertationpointer(unsigned long long y)
+void	ft_starpo(long long z, t_flist *base, int check, long long checkmin)
 {
-	if (y == 10)
-		ft_putchar('a');
-	else	if (y == 11)
-		ft_putchar('b');
-	else	if (y == 12)
-		ft_putchar('c');
-	else	if (y == 13)
-		ft_putchar('d');
-	else	if (y == 14)
-		ft_putchar('e');
-	else	if (y == 15)
-		ft_putchar('f');
-	else
-		ft_putchar((char)(y % 16 + '0'));
-}
-
-void	ft_putpointer(void *z, t_flist **base)
-{
-	unsigned long long	y;
-	y = (unsigned long long)z;
-	/*if (((*base)->spec == 1) && (y = (unsigned short)z))
-		y = (unsigned short)y;
-	else if (((*base)->spec == 2) && (y = (unsigned long)z))
-		y = (unsigned long)y;
-	else if ((*base)->spec == 4 && (y = (unsigned long long)z))
-		y = (unsigned long long)y;
-	else if ((*base)->spec == 0 && (y = (unsigned long long)z))
-		y = (unsigned long long)y;
-	else if ((*base)->spec == 3 && (y = (char)z))
-		y = (unsigned char)y;*/
-	if (y >= 16)
-		ft_putpointer((void*)(y / 16), base);
-	y = y % 16;
-	ft_convertationpointer((unsigned long long)y);
-	((*base)->count)++;
+	ft_loputnbr_p((long long)z, base, &check);
+	ft_loputnbrindentprintp(base, check, checkmin);
 }

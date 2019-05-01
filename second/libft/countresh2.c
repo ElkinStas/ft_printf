@@ -6,7 +6,7 @@
 /*   By: bhudson <bhudson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 18:19:40 by ptorchbu          #+#    #+#             */
-/*   Updated: 2019/04/24 17:17:41 by bhudson          ###   ########.fr       */
+/*   Updated: 2019/05/01 17:32:50 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,22 @@ void	ft_convertation(long long y)
 
 void	ft_check_indent4(t_flist **base, unsigned long long y)
 {
-
-
-	/*if (y == 0 && (*base)->point2 == '.' && (*base)->zero != '0')
+	if (y == 0 && (*base)->point2 == '.' && (*base)->zero != '0')
 	{
-		if ((*base)->indent2 != '0')
+		if ((y == 0 && (*base)->point2 == '.' && (*base)->point != 0) ||
+				(y == 0 && (*base)->point2 == '.' &&\
+				(*base)->point == 0 && (*base)->longitude > 0))
+		{
+			ft_putchar('0');
+			((*base)->count)++;
+		}
+		else if ((*base)->indent2 != '0')
 		{
 			ft_putchar(' ');
 			((*base)->count)++;
 		}
-		else if ((y == 0 && (*base)->point2 == '.' && (*base)->point != 0))
-			{
-				ft_putchar('0');
-				((*base)->count)++;
-			}
 	}
-	else	*/if ((y != 0) || (*base)->point2 != '.'
+	else	if ((y != 0) || (*base)->point2 != '.'
 			|| (y == 0 && (*base)->point2 == '.'))
 	{
 		ft_convertation((unsigned long long)y);

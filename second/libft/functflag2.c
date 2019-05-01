@@ -6,7 +6,7 @@
 /*   By: ptorchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 16:42:37 by ptorchbu          #+#    #+#             */
-/*   Updated: 2019/04/10 16:52:09 by ptorchbu         ###   ########.fr       */
+/*   Updated: 2019/05/01 17:47:51 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	functiondigitalu(va_list ap, t_flist *base)
 	ft_checkminu(z, &base, &checkmin);
 	if (base->point > 0)
 		base->indent = base->indent - base->point;
-	//if (base->sign2 == '+')
-	//	functionindent5(base, &check);
 	if (base->point > 0)
 		ft_zerodigital2(&base, checkmin);
 	if (base->indent > 0)
@@ -76,40 +74,37 @@ void	functflag4(t_flist *base, int *l, int *biggi)
 		*l = 1;
 	}
 	else
-		{
-			base->spec = 4;
-			(*biggi)++;
-		}
+	{
+		base->spec = 4;
+		(*biggi)++;
+	}
 }
 
 void	functflag3(t_flist *base, int *h, int *biggi)
 {
 	if (*h == 0)
 	{
-			if (base->spec != 2 && base->spec != 4)
-			{
-				base->spec = 1;
-				(*biggi)++;
-			}
-			else
-			{
-				(*biggi)++;
-			}
-
+		if (base->spec != 2 && base->spec != 4)
+		{
+			base->spec = 1;
+			(*biggi)++;
+		}
+		else
+			(*biggi)++;
 		*h = 1;
 	}
 	else
+	{
+		if (base->spec != 2 && base->spec != 4)
 		{
-			if (base->spec != 2 && base->spec != 4)
-			{
-				base->spec = 3;
-				(*biggi)++;
-			}
-			else
-			{
-				(*biggi)++;
-			}
+			base->spec = 3;
+			(*biggi)++;
 		}
+		else
+		{
+			(*biggi)++;
+		}
+	}
 }
 
 void	functflag2(char **p, t_flist *base, int *biggi)
@@ -121,23 +116,19 @@ void	functflag2(char **p, t_flist *base, int *biggi)
 	i = 0;
 	h = 0;
 	l = 0;
-	if  (!((**p) >= '0' && (**p) <= '9') && (**p) != ' ')
+	if (!((**p) >= '0' && (**p) <= '9') && (**p) != ' ')
 	{
 		while ((*p)[i] && (*p)[i] != '#' && (*p)[i] != '%' && (*p)[i] != '.'
-		&& (*p)[i] !='+')
+		&& (*p)[i] != '+')
 		{
-			if ((*p)[i] == 'h' )
-			{
+			if ((*p)[i] == 'h')
 				functflag3(base, &h, &(*biggi));
-			}
 			else	if ((*p)[i] == 'l')
-			{
 				functflag4(base, &l, &(*biggi));
-			}
 			else	if ((*p)[i] == 'L')
 			{
-			 base->spec = 5;
-			 (*biggi)++;
+				base->spec = 5;
+				(*biggi)++;
 			}
 			i++;
 		}

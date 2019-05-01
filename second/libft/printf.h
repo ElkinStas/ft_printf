@@ -6,7 +6,7 @@
 /*   By: ptorchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:27:03 by ptorchbu          #+#    #+#             */
-/*   Updated: 2019/04/24 16:00:46 by bhudson          ###   ########.fr       */
+/*   Updated: 2019/05/01 17:28:55 by bhudson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct		s_flist
 	char			minus;
 	char			indent2;
 	int				match;
+	int				longitude2;
 }					t_flist;
 
 void				ft_checkmin(long long z, t_flist **base,\
@@ -109,22 +110,37 @@ void				countresh2(long long z, t_flist *base, int check,\
 		long long checkmin);
 void				ft_func_check_symb2(va_list ap, char *p, t_flist *base);
 void				ft_zerodigital2(t_flist **base, long long checkmin);
-void				ft_checkminx(long long z, t_flist **base, long long *checkmin);
-void	ft_pointerindent(t_flist *base, int check, int *flag);
-void	ft_zerodigital3(t_flist **base, long long checkmin, int *flag);
-void	countreshbig(long long z, t_flist *base, int check, long long checkmin);
-void	ft_zerodigitalbig(t_flist **base, long long checkmin);
-void	ft_zerooct(t_flist **base, long long checkmin);
-void	ft_pointer(va_list ap, t_flist *base);
-void	ft_put_pointer(unsigned long long z, t_flist **base);
-void	ft_check_indent5(t_flist **base, unsigned long long y);
-void	ft_convertationP(unsigned long long y);
-void	ft_countresh_p(unsigned long long z, t_flist *base, int check, long long checkmin);
-void	ft_loputnbr_p(long long z, t_flist *base, int *check);
-void	ft_minus_p(t_flist **base);
-void	ft_checklongitudeP(t_flist **base, long long checkmin);
-void	ft_zerodigital5(t_flist **base, long long checkmin);
-void	ft_checkminP(long long z, long long *checkmin);
-void	ft_loputnbrindentprintp(t_flist *base, int check, int checkmin);
-void	ft_checkmino(long long z, t_flist **base, long long *checkmin);
+void				ft_checkminx(long long z, t_flist **base, \
+		long long *checkmin);
+void				ft_pointerindent(t_flist *base, int check, int *flag);
+void				ft_zerodigital3(t_flist **base, \
+		long long checkmin, int *flag);
+void				countreshbig(long long z, t_flist *base,\
+		int check, long long checkmin);
+void				ft_zerodigitalbig(t_flist **base, long long checkmin);
+void				ft_zerooct(t_flist **base, long long checkmin);
+void				ft_pointer(va_list ap, t_flist *base);
+void				ft_put_pointer(unsigned long long z, t_flist **base);
+void				ft_check_indent5(t_flist **base, unsigned long long y);
+void				ft_countresh_p(unsigned long long z, t_flist *base,\
+		int check, long long checkmin);
+void				ft_loputnbr_p(long long z, t_flist *base, int *check);
+void				ft_minus_p(t_flist **base);
+void				ft_zerodigital5(t_flist **base, long long checkmin);
+void				ft_loputnbrindentprintp(t_flist *base,\
+		int check, int checkmin);
+void				ft_checkmino(long long z, t_flist **base,\
+		long long *checkmin);
+void				ft_check_sign(t_flist **base, \
+		long long checkmin, int *check);
+void				ft_checklongitudebigpoint(t_flist **base,\
+		long long checkmin);
+void				ft_checkminpointer(long long z, long long *checkmin);
+void				ft_checklongitudepointerpr(t_flist **base,\
+		long long checkmin);
+void				ft_starpo(long long z, t_flist *base,\
+		int check, long long	checkmin);
+void				unsconvert(void *z, unsigned long long	*y,\
+		t_flist **base);
+
 #endif
