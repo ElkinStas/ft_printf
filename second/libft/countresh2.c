@@ -32,7 +32,9 @@ void	ft_convertation(long long y)
 
 void	ft_check_indent4(t_flist **base, unsigned long long y)
 {
-	if (y == 0 && (*base)->point2 == '.' && (*base)->zero != '0')
+
+
+	/*if (y == 0 && (*base)->point2 == '.' && (*base)->zero != '0')
 	{
 		if ((*base)->indent2 != '0')
 		{
@@ -45,7 +47,7 @@ void	ft_check_indent4(t_flist **base, unsigned long long y)
 				((*base)->count)++;
 			}
 	}
-	else	if ((y != 0) || (*base)->point2 != '.'
+	else	*/if ((y != 0) || (*base)->point2 != '.'
 			|| (y == 0 && (*base)->point2 == '.'))
 	{
 		ft_convertation((unsigned long long)y);

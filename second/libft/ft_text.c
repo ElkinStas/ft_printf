@@ -33,9 +33,9 @@ void	ft_plus1(char **p, t_flist *base)
 
 void	ft_minus2(t_flist **base)
 {
-	if ((*base)->signf > (*base)->count)
+	if ((*base)->signf > (*base)->longitude)
 	{
-		(*base)->signf = (*base)->signf - (*base)->count;
+		(*base)->signf = (*base)->signf - (*base)->longitude;
 		while ((*base)->signf > 0)
 		{
 			ft_putchar(' ');

@@ -171,7 +171,7 @@ int main()
 	ft_printf("39 stroka: % -8hho\n", (char)255);
 	printf("40 stroka: %9.5o\n", 345);
 	ft_printf("40 stroka: %9.5o\n", 345);
-*/
+
  char	*str = "hello";
 	 printf("kolichestvo %d\n", printf("01 stroka: %s\n", str));
 	 printf("kolichestvo %d\n", ft_printf("01 stroka: %s\n", str));
@@ -292,6 +292,12 @@ int main()
     printf("kolichestvo %d\n", ft_printf("04 stroka: % -15p\n", str1));
     printf("kolichestvo %d\n", printf("05 stroka: % -015p\n", str1));
     printf("kolichestvo %d\n", ft_printf("05 stroka: % -015p\n", str1));*/
+
+		//int r = 2567;
+    //printf("kolichestvo %d\n", printf("02 stroka: %-10.3x\n", r));
+	printf("kolichestvo %d\n", ft_printf("%-5.2x", 0));
+	printf("kolichestvo %d\n", printf("%-5.2x", 0));
+//	ft_printf("@moulitest: %#1.0x %#1.0x", 0, 0);
 		return (0);
 
 }

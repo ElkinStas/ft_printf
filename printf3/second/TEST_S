@@ -1,0 +1,433 @@
+	printf("1\n");
+    printf("%d", printf("the %s", 1));
+    printf("\n");
+    printf("%d", ft_printf("the %s", 1));
+    printf("\n");
+
+    printf("2\n");
+    printf("%d", printf("%s", -1));
+    printf("\n");
+    printf("%d", ft_printf("%s", -1));
+    printf("\n");
+
+    printf("3\n");
+    printf("%d", printf("%s is one", 1));
+    printf("\n");
+    printf("%d", ft_printf("%s is one", 1));
+    printf("\n");
+
+    printf("4\n");
+    printf("%d", printf("%s", 4242));
+    printf("\n");
+    printf("%d", ft_printf("%s", 4242));
+    printf("\n");
+
+    printf("5\n");
+    printf("%d", printf("%s", -4242));
+    printf("\n");
+    printf("%d", ft_printf("%s", -4242));
+    printf("\n");
+
+    printf("6\n");
+    printf("%d", printf("%s", 2147483647));
+    printf("\n");
+    printf("%d", ft_printf("%s", 2147483647));
+    printf("\n");
+
+    printf("7\n");
+    printf("%d", printf("%s", 2147483648));
+    printf("\n");
+    printf("%d", ft_printf("%s", 2147483648));
+    printf("\n");
+
+    printf("8\n");
+    printf("%d", printf("%s", -2147483648));
+    printf("\n");
+    printf("%d", ft_printf("%s", -2147483648));
+    printf("\n");
+
+    printf("9\n");
+    printf("%d", printf("%s", -2147483649));
+    printf("\n");
+    printf("%d", ft_printf("%s", -2147483649));
+    printf("\n");
+
+    printf("10\n");
+    printf("%d", printf("% s", 42));
+    printf("\n");
+    printf("%d", ft_printf("% s", 42));
+    printf("\n");
+
+    printf("11\n");
+    printf("%d", printf("% s", -42));
+    printf("\n");
+    printf("%d", ft_printf("% s", -42));
+    printf("\n");
+
+    printf("12\n");
+    printf("%d", printf("%+s", 42));
+    printf("\n");
+    printf("%d", ft_printf("%+s", 42));
+    printf("\n");
+
+    printf("13\n");
+    printf("%d", printf("%+s", -42));
+    printf("\n");
+    printf("%d", ft_printf("%+s", -42));
+    printf("\n");
+
+    printf("14\n");
+    printf("%d", printf("%+s", 0));
+    printf("\n");
+    printf("%d", ft_printf("%+s", 0));
+    printf("\n");
+
+    printf("15\n");
+    long long l = 4242424242424242424;
+    printf("%d", printf("%+lls", l));
+    printf("\n");
+    printf("%d", ft_printf("%+lls", l));
+    printf("\n");
+    printf("16\n");
+    printf("%d", printf("% +s", 42));
+    printf("\n");
+    printf("%d", ft_printf("% +s", 42));
+    printf("\n");
+
+    printf("17\n");
+    printf("%d", printf("% +s", -42));
+    printf("\n");
+    printf("%d", ft_printf("% +s", -42));
+    printf("\n");
+
+    printf("18\n");
+    printf("%d", printf("%+ s", 42));
+    printf("\n");
+    printf("%d", ft_printf("%+ s", 42));
+    printf("\n");
+
+    printf("19\n");
+    printf("%d", printf("%+ s", -42));
+    printf("\n");
+    printf("%d", ft_printf("%+ s", -42));
+    printf("\n");
+
+    printf("20\n");
+    printf("%d", printf("%  +s", 42));
+    printf("\n");
+    printf("%d", ft_printf("%  +s", 42));
+    printf("\n");
+
+    printf("21\n");
+    printf("%d", printf("%  +s", -42));
+    printf("\n");
+    printf("%d", ft_printf("%  +s", -42));
+    printf("\n");
+
+    printf("22\n");
+    printf("%d", printf("%+  s", 42));
+    printf("\n");
+    printf("%d", ft_printf("%+  s", 42));
+    printf("\n");
+
+    printf("23\n");
+    printf("%d", printf("%+  s", -42));
+    printf("\n");
+    printf("%d", ft_printf("%+  s", -42));
+    printf("\n");
+
+    printf("24\n");
+    printf("%d", printf("% ++s", 42));
+    printf("\n");
+    printf("%d", ft_printf("% ++s", 42));
+    printf("\n");
+
+    printf("25\n");
+    printf("%d", printf("% ++s", -42));
+    printf("\n");
+    printf("%d", ft_printf("% ++s", -42));
+    printf("\n");
+
+    printf("26\n");
+    printf("%d", printf("%++ s", 42));
+    printf("\n");
+    printf("%d", ft_printf("%++ s", 42));
+    printf("\n");
+
+    printf("27\n");
+    printf("%d", printf("%++ s", -42));
+    printf("\n");
+    printf("%d", ft_printf("%++ s", -42));
+    printf("\n");
+
+    printf("28\n");
+    printf("%d", printf("%0s", -42));
+    printf("\n");
+    printf("%d", ft_printf("%0s", -42));
+    printf("\n");
+
+    printf("29\n");
+    printf("%d", printf("%00s", -42));
+    printf("\n");
+    printf("%d", ft_printf("%00s", -42));
+    printf("\n");
+
+    printf("30\n");
+    printf("%d", printf("%5s", 42));
+    printf("\n");
+    printf("%d", ft_printf("%5s", 42));
+    printf("\n");
+
+    printf("31\n");
+    printf("%d", printf("%05s", 42));
+    printf("\n");
+    printf("%d", ft_printf("%05s", 42));
+    printf("\n");
+
+    printf("32\n");
+    printf("%d", printf("%0+5s", 42));
+    printf("\n");
+    printf("%d", ft_printf("%0+5s", 42));
+    printf("\n");
+
+    printf("33\n");
+    printf("%d", printf("%5s", -42));
+    printf("\n");
+    printf("%d", ft_printf("%5s", -42));
+    printf("\n");
+
+    printf("34\n");
+    printf("%d", printf("%05s", -42));
+    printf("\n");
+    printf("%d", ft_printf("%05s", -42));
+    printf("\n");
+
+    printf("35\n");
+    printf("%d", printf("%0+5s", -42));
+    printf("\n");
+    printf("%d", ft_printf("%0+5s", -42));
+    printf("\n");
+
+    printf("36\n");
+    printf("%d", printf("%-5s", 42));
+    printf("\n");
+    printf("%d", ft_printf("%-5s", 42));
+    printf("\n");
+
+    printf("37\n");
+    printf("%d", printf("%-05s", 42));
+    printf("\n");
+    printf("%d", ft_printf("%-05s", 42));
+    printf("\n");
+
+    printf("38\n");
+    printf("%d", printf("%-5s", -42));
+    printf("\n");
+    printf("%d", ft_printf("%-5s", -42));
+    printf("\n");
+
+    printf("39\n");
+    printf("%d", printf("%-05s", -42));
+    printf("\n");
+    printf("%d", ft_printf("%-05s", -42));
+    printf("\n");
+
+    printf("40\n");
+    printf("%d", printf("%hs", 32767));
+    printf("\n");
+    printf("%d", ft_printf("%hs", 32767));
+    printf("\n");
+
+    printf("41\n");
+    short int d = -32769;
+    printf("%d", printf("%hs", d));
+    printf("\n");
+    printf("%d", ft_printf("%hs", d));
+    printf("\n");
+
+    printf("42\n");
+    printf("%d", printf("%hs", 32768));
+    printf("\n");
+    printf("%d", ft_printf("%hs", 32768));
+    printf("\n");
+
+    printf("43\n");
+    short int s = -32769;
+    printf("%d", printf("%hs", s));
+    printf("\n");
+    printf("%d", ft_printf("%hs", s));
+    printf("\n");
+
+    printf("44\n");
+    printf("%d", printf("%hhs", 127));
+    printf("\n");
+    printf("%d", ft_printf("%hhs", 127));
+    printf("\n");
+
+    printf("45\n");
+    printf("%d", printf("%hhs", 128));
+    printf("\n");
+    printf("%d", ft_printf("%hhs", 128));
+    printf("\n");
+
+   printf("46\n");
+    printf("%d", printf("%hhs", -128));
+    printf("\n");
+    printf("%d", ft_printf("%hhs", -128));
+    printf("\n");
+
+    printf("47\n");
+    printf("%d", printf("%hhs", -129));
+    printf("\n");
+    printf("%d", ft_printf("%hhs", -129));
+    printf("\n");
+
+    printf("48\n");
+    printf("%d", printf("%ls", 2147483647));
+    printf("\n");
+    printf("%d", ft_printf("%ls", 2147483647));
+    printf("\n");
+
+    printf("49\n");
+    printf("%d", printf("%ls", -2147483648));
+    printf("\n");
+    printf("%d", ft_printf("%ls", -2147483648));
+    printf("\n");
+
+    printf("50\n");
+    printf("%d", printf("%ls", 2147483648));
+    printf("\n");
+    printf("%d", ft_printf("%ls", 2147483648));
+    printf("\n");
+
+    printf("51\n");
+    printf("%d", printf("%ls", -2147483649));
+    printf("\n");
+    printf("%d", ft_printf("%ls", -2147483649));
+    printf("\n");
+
+    printf("52\n");
+    printf("%d", printf("%lls", 9223372036854775807));
+    printf("\n");
+    printf("%d", ft_printf("%lls", 9223372036854775807));
+    printf("\n");
+
+    printf("53\n");
+    printf("%d", printf("%lls", -9223372036854775808));
+    printf("\n");
+    printf("%d", ft_printf("%lls", -9223372036854775808));
+    printf("\n");
+
+    printf("54\n");
+    printf("%d", printf("%s %s", 1, -2));
+    printf("\n");
+    printf("%d", ft_printf("%s %s", 1, -2));
+    printf("\n");
+
+    printf("55\n");
+    printf("%d", printf("%s %s %s", 1, -2, 33));
+    printf("\n");
+    printf("%d", ft_printf("%s %s %s", 1, -2, 33));
+    printf("\n");
+
+    printf("56\n");
+    printf("%d", printf("%s %s %s %s", 1, -2, 33, 42));
+    printf("\n");
+    printf("%d", ft_printf("%s %s %s %s", 1, -2, 33, 42));
+    printf("\n");
+
+    printf("57\n");
+    printf("%d", printf("%s %s %s %s gg!", 1, -2, 33, 42, 0));
+    printf("\n");
+    printf("%d", ft_printf("%s %s %s %s gg!", 1, -2, 33, 42, 0));
+    printf("\n");
+
+    printf("58\n");
+    printf("%d", printf("%4.15s", 42));
+    printf("\n");
+    printf("%d", ft_printf("%4.15s", 42));
+    printf("\n");
+
+    printf("59\n");
+    printf("%d", printf("%.2s", 4242));
+    printf("\n");
+    printf("%d", ft_printf("%.2s", 4242));
+    printf("\n");
+
+    printf("60\n");
+    printf("%d", printf("%.10s", 4242));
+    printf("\n");
+    printf("%d", ft_printf("%.10s", 4242));
+    printf("\n");
+
+    printf("61\n");
+    printf("%d", printf("%10.5s", 4242));
+    printf("\n");
+    printf("%d", ft_printf("%10.5s", 4242));
+    printf("\n");
+
+    printf("62\n");
+    printf("%d", printf("%-10.5s", 4242));
+    printf("\n");
+    printf("%d", ft_printf("%-10.5s", 4242));
+    printf("\n");
+
+    printf("63\n");
+    printf("%d", printf("% 10.5s", 4242));
+    printf("\n");
+    printf("%d", ft_printf("% 10.5s", 4242));
+    printf("\n");
+
+    printf("64\n");
+    printf("%d", printf("%+10.5s", 4242));
+    printf("\n");
+    printf("%d", ft_printf("%+10.5s", 4242));
+    printf("\n");
+
+    printf("65\n");
+    printf("%d", printf("%-+10.5s", 4242));
+    printf("\n");
+    printf("%d", ft_printf("%-+10.5s", 4242));
+    printf("\n");
+
+    printf("66\n");
+    printf("%d", printf("%03.2s", 0));
+    printf("\n");
+    printf("%d", ft_printf("%03.2s", 0));
+    printf("\n");
+
+    printf("67\n");
+    printf("%d", printf("%03.2s", 1));
+    printf("\n");
+    printf("%d", ft_printf("%03.2s", 1));
+    printf("\n");
+
+    printf("68\n");
+    printf("%d", printf("%03.2s", -1));
+    printf("\n");
+    printf("%d", ft_printf("%03.2s", -1));
+    printf("\n");
+
+    printf("69\n");
+    printf("%d", printf("@moslitest: %.10s", -42));
+    printf("\n");
+    printf("%d", ft_printf("@moslitest: %.10s", -42));
+    printf("\n");
+
+    printf("70\n");
+    printf("%d", printf("@moulitest: %.s %.0s", 42, 43));
+    printf("\n");
+    printf("%d", ft_printf("@moulitest: %.s %.0s", 42, 43));
+    printf("\n");
+
+    printf("71\n");
+    printf("%d", printf("@moulitest: %.s %.0s", 0, 0));
+    printf("\n");
+    printf("%d", ft_printf("@moslitest: %.s %.0s", 0, 0));
+    printf("\n");
+
+    printf("72\n");
+    printf("%d", printf("@moulitest: %5.s %5.0s", 0, 0));
+    printf("\n");
+    printf("%d", ft_printf("@moulitest: %5.s %5.0s", 0, 0));
+    printf("\n");

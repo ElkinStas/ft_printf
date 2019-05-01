@@ -36,7 +36,21 @@ void	functionsix(va_list ap, t_flist *base)
 	}
 	if ((base->resh == 1 && checkmin != 0) && (base->count = base->count + 2))
 		ft_putstr("0x");
-	ft_putsix(z, &base);
+	if (z == 0 && base->point2 == '.' && base->zero != '0')
+	{
+		if (base->indent2 != '0')
+		{
+			ft_putchar(' ');
+			base->count++;
+		}
+		else if ((z == 0 && base->point2 == '.' && base->point != 0))
+			{
+				ft_putchar('0');
+				base->count++;
+			}
+	}
+	else
+		ft_putsix(z, &base);
 	ft_minus2(&base);
 }
 
