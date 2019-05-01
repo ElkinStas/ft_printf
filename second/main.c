@@ -5,6 +5,7 @@
 
 int main()
 {
+<<<<<<< HEAD
 float k = 2.5473219880;
 int u = 72;
 /*
@@ -40,6 +41,12 @@ int r = 67;
   printf("kolichestvo %d\n", ft_printf("02 stroka: %llhhll10.3u\n", r));
  	//printf("01 stroka: %-+8.6d\n", -123);
 	/*ft_printf("01 stroka: %-+8.6d\n", -123);
+=======
+int r = 2567;
+    printf("kolichestvo %d\n", ft_printf("02 stroka: %-10.3x\n", r));
+ printf("01 stroka: %-+8.6d\n", -123);
+	ft_printf("01 stroka: %-+8.6d\n", -123);
+>>>>>>> b4c3a0d6d45ab7da3b81bcdddc169bc376707b40
 	printf("02 stroka: % -+8.6d\n", -123);
 	ft_printf("02 stroka: % -+8.6d\n", -123);
 	printf("03 stroka: %-+8.6d\n", 123);
@@ -196,6 +203,10 @@ int r = 67;
 	ft_printf("40 stroka: %9.5o\n", 345);
  char	*str = "hello";
 	 printf("kolichestvo %d\n", printf("01 stroka: %s\n", str));
+<<<<<<< HEAD
+=======
+
+>>>>>>> b4c3a0d6d45ab7da3b81bcdddc169bc376707b40
   printf("kolichestvo %d\n", ft_printf("01 stroka: %s\n", str));
 	 printf("kolichestvo %d\n", ft_printf("02 stroka: %15.06s\n", str));
 	 printf("kolichestvo %d\n", ft_printf("02 stroka: %15.06s\n", str));
@@ -203,8 +214,13 @@ int r = 67;
 	 printf("kolichestvo %d\n", ft_printf("03 stroka: %-15s\n", str));
 	 printf("kolichestvo %d\n", printf("04 stroka: % -15s\n", str));
 	 printf("kolichestvo %d\n", ft_printf("04 stroka: % -15s\n", str));
+<<<<<<< HEAD
 	 printf("kolichestvo %d\n", printf("05 stroka: % 015.2s\n", str));
 	 printf("kolichestvo %d\n", ft_printf("05 stroka: % 015.2s\n", str));
+=======
+	 printf("kolichestvo %d\n", printf("05 stroka: % -015s\n", str));
+	 printf("kolichestvo %d\n", ft_printf("05 stroka: % -015s\n", str));
+>>>>>>> b4c3a0d6d45ab7da3b81bcdddc169bc376707b40
  //тесты для pointer
 	printf("kolichestvo %d\n", printf("01 stroka: %p\n", str));
 	printf("kolichestvo %d\n", ft_printf("01 stroka: %p\n", str));
@@ -223,6 +239,7 @@ printf("kolichestvo %d\n", ft_printf("05 stroka: % 015p\n", str));
 	printf("kolichestvo %d\n", printf("07 stroka: %16.12p\n", str));
 	printf("kolichestvo %d\n", ft_printf("07 stroka: %16.12p\n", str));
 	 //тесты для count
+<<<<<<< HEAD
 	printf("kolichestvo %d\n", printf("01 stroka: %-+8.6u\n", -123));
 	printf("kolichestvo %d\n", ft_printf("01 stroka: %-+8.6u\n", -123));
 	printf("kolichestvo %d\n", printf("02 stroka: % -+8.6u\n", -123));
@@ -285,6 +302,70 @@ printf("kolichestvo %d\n", ft_printf("05 stroka: % 015p\n", str));
 	 printf("kolichestvo %d\n", ft_printf("30 stroka: % 06u\n", 123));
 	 printf("kolichestvo %d\n", printf("%0+5u", 42));
 	 printf("kolichestvo %d\n", ft_printf("%0+5u", 42));
+=======
+	printf("kolichestvo %d\n", printf("01 stroka: %-+8.6d\n", -123));
+	printf("kolichestvo %d\n", ft_printf("01 stroka: %-+8.6d\n", -123));
+	printf("kolichestvo %d\n", printf("02 stroka: % -+8.6d\n", -123));
+	printf("kolichestvo %d\n", ft_printf("02 stroka: % -+8.6d\n", -123));
+	printf("kolichestvo %d\n", printf("03 stroka: %-+8.6d\n", 123));
+	printf("kolichestvo %d\n", ft_printf("03 stroka: %-+8.6d\n", 123));
+	printf("kolichestvo %d\n", printf("04 stroka: % -+8.6d\n", 123));
+	printf("kolichestvo %d\n", ft_printf("04 stroka: % -+8.6d\n", 123));
+	printf("kolichestvo %d\n", printf("05 stroka: %-8.6d\n", 123));
+	printf("kolichestvo %d\n", ft_printf("05 stroka: %-8.6d\n", 123));
+	printf("kolichestvo %d\n", printf("06 stroka: % -8.6d\n", 123));
+	printf("kolichestvo %d\n", ft_printf("06 stroka: % -8.6d\n", 123));
+	printf("kolichestvo %d\n", printf("07 stroka: %+8.6d\n", -123));
+	 printf("kolichestvo %d\n", ft_printf("07 stroka: %+8.6d\n", -123));
+	 printf("kolichestvo %d\n", printf("08 stroka: % +8.6d\n", -123));
+	 printf("kolichestvo %d\n", ft_printf("08 stroka: % +8.6d\n", -123));
+	 printf("kolichestvo %d\n", printf("09 stroka: %+8.6d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("09 stroka: %+8.6d\n", 123));
+	 printf("kolichestvo %d\n", printf("10 stroka: % +8.6d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("10 stroka: % +8.6d\n", 123));
+	 printf("kolichestvo %d\n", printf("11 stroka: %8.6d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("11 stroka: %8.6d\n", 123));
+	 printf("kolichestvo %d\n", printf("12 stroka: % 8.6d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("12 stroka: % 8.6d\n", 123));
+	 printf("kolichestvo %d\n", printf("13 stroka: %+8d\n", -123));
+	 printf("kolichestvo %d\n", ft_printf("13 stroka: %+8d\n", -123));
+	 printf("kolichestvo %d\n", printf("14 stroka: % +8d\n", -123));
+	 printf("kolichestvo %d\n", ft_printf("14 stroka: % +8d\n", -123));
+	 printf("kolichestvo %d\n", printf("15 stroka: %8.6d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("15 stroka: %8.6d\n", 123));
+	 printf("kolichestvo %d\n", printf("16 stroka: % 8.6d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("16 stroka: % 8.6d\n", 123));
+	 printf("kolichestvo %d\n", printf("17 stroka: %+ 8.6d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("17 stroka: %+ 8.6d\n", 123));
+	 printf("kolichestvo %d\n", printf("18 stroka: % 8.6 d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("18 stroka: % 8.6 d\n", 123));
+	 printf("kolichestvo %d\n", printf("19 stroka: %      8d\n", -123));
+	 printf("kolichestvo %d\n", ft_printf("19 stroka: %      8d\n", -123));
+	 printf("kolichestvo %d\n", printf("20 stroka: % 8.6d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("20 stroka: % 8.6d\n", 123));
+	 printf("kolichestvo %d\n", printf("21 stroka: % d\n", -123));
+	 printf("kolichestvo %d\n", ft_printf("21 stroka: % d\n", -123));
+	 printf("kolichestvo %d\n", printf("22 stroka: %      d\n", -123));
+	 printf("kolichestvo %d\n", ft_printf("22 stroka: %      d\n", -123));
+	 printf("kolichestvo %d\n", printf("23 stroka: %08.6d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("23 stroka: %08.6d\n", 123));
+	 printf("kolichestvo %d\n", printf("24 stroka: %-010d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("24 stroka: %-010d\n", 123));
+	 printf("kolichestvo %d\n", printf("25 stroka: % 010d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("25 stroka: % 010d\n", 123));
+	 printf("kolichestvo %d\n", printf("26 stroka: % 010.5d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("26 stroka: % 010.5d\n", 123));
+	 printf("kolichestvo %d\n", printf("27 stroka: %9.0d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("27 stroka: %9.0d\n", 123));
+	 printf("kolichestvo %d\n", printf("28 stroka: %9d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("28 stroka: %9d\n", 123));
+	 printf("kolichestvo %d\n", printf("29 stroka: % 08.6d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("29 stroka: % 08.6d\n", 123));
+	 printf("kolichestvo %d\n", printf("30 stroka: % 06d\n", 123));
+	 printf("kolichestvo %d\n", ft_printf("30 stroka: % 06d\n", 123));
+	 printf("kolichestvo %d\n", printf("%0+5d", 42));
+	 printf("kolichestvo %d\n", ft_printf("%0+5d", 42));
+>>>>>>> b4c3a0d6d45ab7da3b81bcdddc169bc376707b40
 	 printf("kolichestvo %d\n", printf("32 stroka: % 15s\n", "privet"));
 	 printf("kolichestvo %d\n", ft_printf("32 stroka: % 15s\n", "privet"));
 	 printf("kolichestvo %d\n", printf("33 stroka: % c\n", 'c'));
@@ -299,6 +380,7 @@ printf("kolichestvo %d\n", ft_printf("05 stroka: % 015p\n", str));
 	 printf("kolichestvo %d\n", printf("37 stroka: % 1.2d\n", -1));
 	 printf("kolichestvo %d\n", printf("38 stroka: %9.5d\n", 345));
 	 printf("kolichestvo %d\n", ft_printf("38 stroka: %9.5d\n", 345));
+<<<<<<< HEAD
 	 	printf("kolichestvo %d\n", printf("01 stroka: %-+8.6u\n", -123));
 	printf("kolichestvo %d\n", ft_printf("01 stroka: %-+8.6u\n", -123));
 	printf("kolichestvo %d\n", printf("02 stroka: % -+8.6u\n", -123));
@@ -359,6 +441,8 @@ printf("kolichestvo %d\n", ft_printf("05 stroka: % 015p\n", str));
 	 printf("kolichestvo %d\n", ft_printf("29 stroka: % 08.6u\n", 123));
 	 printf("kolichestvo %d\n", printf("30 stroka: % 06u\n", 123));
 	 printf("kolichestvo %d\n", ft_printf("30 stroka: % 06u\n", 123));
+=======
+>>>>>>> b4c3a0d6d45ab7da3b81bcdddc169bc376707b40
 	 char    *str1 = "hello";
     printf("kolichestvo %d\n", printf("01 stroka: %p\n", str1));
     printf("kolichestvo %d\n", ft_printf("01 stroka: %p\n", str1));
@@ -368,9 +452,14 @@ printf("kolichestvo %d\n", ft_printf("05 stroka: % 015p\n", str));
     printf("kolichestvo %d\n", ft_printf("03 stroka: %-15p\n", str1));
     printf("kolichestvo %d\n", printf("04 stroka: % -15p\n", str1));
     printf("kolichestvo %d\n", ft_printf("04 stroka: % -15p\n", str1));
+<<<<<<< HEAD
     printf("kolichestvo %d\n", printf("05 stroka: % -015ppppp\n", str1));
     printf("kolichestvo %d\n", ft_printf("05 stroka: % -015ppppp\n", str1));
 		printf("%d", ft_printf("{%05.s}", 0));*/
+=======
+    printf("kolichestvo %d\n", printf("05 stroka: % -015p\n", str1));
+    printf("kolichestvo %d\n", ft_printf("05 stroka: % -015p\n", str1));
+>>>>>>> b4c3a0d6d45ab7da3b81bcdddc169bc376707b40
 		return (0);
 
 }

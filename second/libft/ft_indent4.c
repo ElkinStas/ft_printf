@@ -40,10 +40,14 @@ void	ft_printtext(char *sval, t_flist *base, int check)
 	ft_checkstr(sval, &check);
 	if (base->point > 0 && check != 0)
 	{
+<<<<<<< HEAD
 		if (check < base->point)
 			base->indent = base->indent - check;
 		else
 			base->indent = base->indent - base->point;
+=======
+		base->indent = base->indent - base->point;
+>>>>>>> b4c3a0d6d45ab7da3b81bcdddc169bc376707b40
 		if (check != 0 && base->point <= check)
 			check = base->point;
 	}

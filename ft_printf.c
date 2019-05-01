@@ -166,7 +166,7 @@ int	ft_count_sympoint(long double f, t_flist *flags)
 	int sum =0;
 	if (flags->point2 != '.')
 		sum =6;
-	else 
+	else
 		 sum = flags->point;
 		return (sum);
 }
@@ -194,7 +194,7 @@ void    ft_putnbrfl(long long fl, t_flist *base, long long checkmin)
 	if (y < 0)
 	{
 		a = -1 * y;
-        
+
 		if((checkmin < 0 && base->zero != '0') ||(base->zero == '0' && base->indent == 0))
             {
                 if(base->minus != '-')
@@ -205,12 +205,12 @@ void    ft_putnbrfl(long long fl, t_flist *base, long long checkmin)
 	else
 		a = y;
 	if (a >= 10)
-		ft_putnbrfl((a / 10), base, checkmin); 
+		ft_putnbrfl((a / 10), base, checkmin);
 	if (a == 0 && base->point2 == '.' && base->zero != '0')
         {
             if(base->indent2 != '0')
             {
-                ft_putchar(' '); 
+                ft_putchar(' ');
                 base->count++;
             }
         }
@@ -225,7 +225,7 @@ void    functionfloat(va_list ap, t_flist *base)
 {
     //t_flist flags;
     long long   checkmin;
-    
+
 	int i = 0;
 	//int zer = 0;
 	long double f;
@@ -234,7 +234,7 @@ void    functionfloat(va_list ap, t_flist *base)
 	int count =0;
 	//int c =0;
 	f = va_arg(ap, long double);
-   
+
 	i = ft_single_part(f); /* количество символов целой части*/
 	cop = (int)f;
      ft_checkmin(cop, &base, &checkmin);
@@ -261,7 +261,7 @@ void    ft_checklongitudex(long long z, t_flist **base, long long checkmin)
            checkmin  = (int) checkmin ;
      else if ((*base)->spec == 3 && (checkmin  = (char) z))
         checkmin  = (char) checkmin ;
-    while((checkmin) != 0) 
+    while((checkmin) != 0)
     {
         (checkmin) = (checkmin)/16;
         (*base)->longitude++;
@@ -281,7 +281,7 @@ void    ft_checklongitudeo(long long z, t_flist **base, long long checkmin)
            checkmin  = (int) checkmin ;
      else if ((*base)->spec == 3 && (checkmin  = (char) z))
         checkmin  = (char) checkmin ;
-    while((checkmin) != 0) 
+    while((checkmin) != 0)
     {
         (checkmin) = (checkmin)/8;
         (*base)->longitude++;
@@ -292,7 +292,7 @@ void    ft_indentd2(t_flist **base, int check)
 {
     int i;
     i = (*base)->indent;
-   
+
     if ((*base)->indent > check)
      {
         if((*base)->point2 != '.')
@@ -302,14 +302,14 @@ void    ft_indentd2(t_flist **base, int check)
              ft_putchar(' ');
              i--;
              (*base)->count++;
-         } 
+         }
      }
 }
 
 void    ft_loputnbrindentu(void*  z,t_flist *base, int *check)
 {
    unsigned long long y;
-    
+
      if (((base)->spec == 1) && (y = (unsigned short) z))
        y = (unsigned short)y;
     else if (((base)->spec == 2) && (y = (unsigned long) z))
@@ -321,9 +321,9 @@ void    ft_loputnbrindentu(void*  z,t_flist *base, int *check)
     else if ((base)->spec == 3 && (y = (char) z))
         y = (unsigned char) y;
 	if (y >= 10)
-	    ft_loputnbrindentu((void*)(y / 10), base, check); 
+	    ft_loputnbrindentu((void*)(y / 10), base, check);
 	    (*check)++;
-}   
+}
 
 void    ft_loputnbrindentprint(t_flist *base, int check, int checkmin)
 {
@@ -351,9 +351,9 @@ void    ft_loputnbrindentprint(t_flist *base, int check, int checkmin)
 
 void    ft_plus1(char **p, t_flist *base)
 {
-  
+
    int      i;
-       
+
     i = 0;
     (*p)++;
     while (**p == ' ')
@@ -409,7 +409,7 @@ void    ft_minus1(char **p, t_flist *base)
     while(q > 0)
     {
       (*p)++;
-      q--; 
+      q--;
     }
     //(*p)++;
     base->sign = '-';
@@ -428,7 +428,7 @@ void    ft_text(char **p, t_flist *base)
     //if (**p != '\0' )
      q = ft_strlen(*p);
     while (i < q && **p != '%' && **p != '\0')
-    {   
+    {
         ft_putchar(**p);
         (base->count)++;
         i++;
@@ -451,7 +451,7 @@ void    ft_uputnbr(void* z, t_flist **base)
         y = (char) y;
     a = y;
 		if (a >= 10)
-		ft_uputnbr((void*)(a / 10), base); 
+		ft_uputnbr((void*)(a / 10), base);
 	ft_putchar((char)(a % 10 + '0'));
     ((*base)->count)++;
 }
@@ -467,7 +467,7 @@ void    ft_uputnbr(void* z, t_flist **base)
            *checkmin  = (unsigned int) *checkmin ;
      else if ((*base)->spec == 3 && (*checkmin  = (unsigned char) z))
         *checkmin  = (unsigned char) *checkmin ;
-    while((*checkmin) != 0) 
+    while((*checkmin) != 0)
     {
         (*checkmin) = (*checkmin)/10;
         (*base)->longitude++;
@@ -486,7 +486,7 @@ void    ft_checkminu(void* z, t_flist **base, unsigned long long *checkmin)
            *checkmin  = (unsigned int) *checkmin ;
      else if ((*base)->spec == 3 && (*checkmin  = (unsigned char) z))
         *checkmin  = (unsigned char) *checkmin ;
-    
+
 }
 void    ft_loputnbrindentprintu(t_flist *base, int check)
 {
@@ -495,7 +495,7 @@ void    ft_loputnbrindentprintu(t_flist *base, int check)
     if (check < i)
     {
         i = i - check;
-        
+
         while(i > 0 && base->sign != '-')
         {
             if(base->zero == '0')
@@ -532,23 +532,23 @@ void    functiondigitalu(va_list ap, t_flist *base)
          }
          check++;
      }
-     
+
 
  if (base->point > 0)
         {
             ft_zerodigital(&base, checkmin);
         }
-    
+
 
      if (base->indent > 0)
         {
             ft_loputnbrindentu(z, base, &check);
             ft_loputnbrindentprintu(base, check);
         }
-        
+
      ft_uputnbr(z, &base);
        if (base->sign == '-')
-        ft_minus2(&base);  
+        ft_minus2(&base);
 }
 
 
@@ -576,7 +576,7 @@ void	ft_loputnbr(void* z, t_flist **base)
 	/*else
 		a = y;*/
 	if (a >= 10)
-		ft_loputnbr((void*)(a / 10), base); 
+		ft_loputnbr((void*)(a / 10), base);
 	ft_putchar((char)(a % 10 + '0'));
     ((*base)->count)++;
 }
@@ -616,8 +616,8 @@ void    fucnctcheck(char **p, t_flist *base)
     }
     if ((base->spec == 1 || base->spec == 2) && (base->match = 1))
      (*p)++;
-     
-     
+
+
     if ((base->spec == 3 || base->spec == 4) && (base->match = 1))
         (*p) = (*p) + 2;
 }
@@ -638,12 +638,12 @@ void    functionstring(va_list ap, t_flist *base)
 
      sval = va_arg(ap, char *);
      if (sval == NULL)
-       { 
+       {
            ft_putstr("(null)");
             (base->count)= (base->count) + 6;
        }
-     else 
-     {   
+     else
+     {
          ft_checkstr(sval, &check);
           if(base->point >0 && check != 0)
        {
@@ -657,7 +657,7 @@ void    functionstring(va_list ap, t_flist *base)
         check = base->point;*/
     while(check > 0)
     {
-              
+
              {
                  ft_putchar(*sval);
         sval++;
@@ -665,12 +665,12 @@ void    functionstring(va_list ap, t_flist *base)
         (base->count)++;}
     }
     if (base->sign == '-')
-        ft_minus2(&base);   
+        ft_minus2(&base);
      }
 }
 /*void    ft_conversionu(void* z, long long *y, t_flist **base)
 {
-  
+
      if (((*base)->spec == 1) && (*y = (unsigned short) z))
        *y = (unsigned short)y;
     else if (((*base)->spec == 2) && (*y = (unsigned long) z))
@@ -696,7 +696,7 @@ void	ft_puteight(long long z, t_flist **base)
      y = (unsigned int) y;
     else if ((*base)->spec == 3 && (y = (char) z))
         y = (unsigned char) y;
-    
+
 		a = y;
 		if (a >= 8)
 	{
@@ -708,12 +708,12 @@ void	ft_puteight(long long z, t_flist **base)
         {
             if((*base)->indent2 != '0')
             {
-                ft_putchar(' '); 
+                ft_putchar(' ');
                 ((*base)->count)++;
             }
             else if ((*base)->resh == 1)
             {
-                ft_putchar('0'); 
+                ft_putchar('0');
                 ((*base)->count)++;
             }
         }
@@ -727,7 +727,7 @@ void	ft_puteight(long long z, t_flist **base)
 void    ft_loputnbrindentuo(long long  z,t_flist *base, int *check)
 {
    unsigned long long y;
-    
+
      if (((base)->spec == 1) && (y = (unsigned short) z))
        y = (unsigned short)y;
     else if (((base)->spec == 2) && (y = (unsigned long) z))
@@ -739,10 +739,10 @@ void    ft_loputnbrindentuo(long long  z,t_flist *base, int *check)
     else if ((base)->spec == 3 && (y = (char) z))
         y = (unsigned char) y;
     if (y >= 16)
-	    ft_loputnbrindentuo((long long)(y / 8), base, check); 
+	    ft_loputnbrindentuo((long long)(y / 8), base, check);
 	     //ft_convertation((long long)y);
      (*check)++;
-}   
+}
 void    functioneight(va_list ap, t_flist *base)
 {
     long long z;
@@ -752,15 +752,15 @@ void    functioneight(va_list ap, t_flist *base)
     z = va_arg(ap, long long int);
     ft_checkmin(z, &base, &checkmin);
     ft_checklongitudeo(z, &base, checkmin);
-    
+
     if(base->point >0)
        base->indent = base->indent - base->point;
-        
+
     if (base->point > 0)
         {
             ft_zerodigital(&base, checkmin);
-        } 
-    
+        }
+
     if(base->resh == 1  && checkmin != 0)
     {
         base->count++;
@@ -794,7 +794,7 @@ void    functioneight(va_list ap, t_flist *base)
 
 void    ft_convertation2(long long y)
 {
- 
+
     if (y == 10 )
          ft_putchar ('A');
     else if  (y == 11 )
@@ -805,9 +805,9 @@ void    ft_convertation2(long long y)
          ft_putchar ('D');
     else if (y == 14 )
          ft_putchar ('E');
-    else if (y == 15 ) 
+    else if (y == 15 )
          ft_putchar ('F');
-    else 
+    else
 	   ft_putchar((char)(y % 16 + '0'));
 }
 
@@ -825,16 +825,16 @@ void    ft_convertation(long long y)
          ft_putchar ('e');
     else if (y == 15)
          ft_putchar ('f');
-    else 
-	   ft_putchar((char)(y % 16 + '0')); 
+    else
+	   ft_putchar((char)(y % 16 + '0'));
 }
 
 
 
 void    ft_putsix(long long z, t_flist **base)
-{   
+{
     unsigned long long y;
-    
+
      if (((*base)->spec == 1) && (y = (unsigned short) z))
        y = (unsigned short)y;
     else if (((*base)->spec == 2) && (y = (unsigned long) z))
@@ -852,7 +852,7 @@ void    ft_putsix(long long z, t_flist **base)
         {
             if((*base)->indent2 != '0')
             {
-                ft_putchar(' '); 
+                ft_putchar(' ');
                 ((*base)->count)++;
             }
         }
@@ -866,7 +866,7 @@ void    ft_putsix(long long z, t_flist **base)
 void    ft_loputnbrindentux(long long  z,t_flist *base, int *check)
 {
    unsigned long long y;
-    
+
      if (((base)->spec == 1) && (y = (unsigned short) z))
        y = (unsigned short)y;
     else if (((base)->spec == 2) && (y = (unsigned long) z))
@@ -878,10 +878,10 @@ void    ft_loputnbrindentux(long long  z,t_flist *base, int *check)
     else if ((base)->spec == 3 && (y = (char) z))
         y = (unsigned char) y;
     if (y >= 16)
-	    ft_loputnbrindentux((long long)(y / 16), base, check); 
+	    ft_loputnbrindentux((long long)(y / 16), base, check);
 	     //ft_convertation((long long)y);
      (*check)++;
-}   
+}
 
 void    functionsix(va_list ap, t_flist *base)
 {
@@ -892,14 +892,14 @@ void    functionsix(va_list ap, t_flist *base)
     z = va_arg(ap, long);
     ft_checkmin(z, &base, &checkmin);
     ft_checklongitudex(z, &base, checkmin);
-    
+
     if(base->point >0)
        base->indent = base->indent - base->point;
-        
+
     if (base->point > 0)
         {
             ft_zerodigital(&base, checkmin);
-        } 
+        }
     if(base->resh == 1  && checkmin != 0)
     {
         base->count = base->count + 2;
@@ -931,7 +931,7 @@ void    functionsix(va_list ap, t_flist *base)
 void    ft_putsiX(long long z, t_flist **base)
 {
     unsigned long long y;
-    
+
      if (((*base)->spec == 1) && (y = (unsigned short) z))
        y = (unsigned short)y;
     else if (((*base)->spec == 2) && (y = (unsigned long) z))
@@ -949,7 +949,7 @@ void    ft_putsiX(long long z, t_flist **base)
         {
             if((*base)->indent2 != '0')
             {
-                ft_putchar(' '); 
+                ft_putchar(' ');
                 ((*base)->count)++;
             }
         }
@@ -968,14 +968,14 @@ void    functionsiX(va_list ap, t_flist *base)
     z = va_arg(ap, long);
     ft_checkmin(z, &base, &checkmin);
     ft_checklongitudex(z, &base, checkmin);
-    
+
     if(base->point >0)
        base->indent = base->indent - base->point;
-        
+
     if (base->point > 0)
         {
             ft_zerodigital(&base, checkmin);
-        } 
+        }
     if(base->resh == 1  && checkmin != 0)
     {
         base->count = base->count + 2;
@@ -1008,7 +1008,7 @@ void    functionsiX(va_list ap, t_flist *base)
 void    ft_indentdchar(t_flist **base)
 {
     int i;
-    
+
     i = 1;
     if ((*base)->indent > i)
      {
@@ -1021,13 +1021,13 @@ void    ft_indentdchar(t_flist **base)
                 ft_putchar(' ');
              i--;
              (*base)->count++;
-         } 
+         }
      }
 }
 void    functionchar(va_list ap, t_flist *base)
 {
     char    z;
-  
+
     z = va_arg(ap, int);
     if (base->indent > 0)
         ft_indentdchar(&base);
@@ -1039,7 +1039,7 @@ void    ft_loputnbrindent(long long  z,t_flist *base, int *check)
 {
     long long y;
     long long a;
-   
+
      if (((base)->spec == 1) && (y = (short) z))
           y = (short)y;
     else if (((base)->spec  == 2) && (y = (long) z))
@@ -1057,7 +1057,7 @@ void    ft_loputnbrindent(long long  z,t_flist *base, int *check)
 		(*check)++;
 	}
 	if (a >= 10)
-	    ft_loputnbrindent((long long)(a / 10), base, check); 
+	    ft_loputnbrindent((long long)(a / 10), base, check);
 	(*check)++;
 }
 
@@ -1073,7 +1073,7 @@ void    ft_checkmin(long long z, t_flist **base, long long *checkmin)
            *checkmin  = (int) *checkmin ;
      else if ((*base)->spec == 3 && (*checkmin  = (char) z))
         *checkmin  = (char) *checkmin ;
-    
+
 }
 void    ft_checklongitude(long long z, t_flist **base, long long *checkmin)
 {
@@ -1087,7 +1087,7 @@ void    ft_checklongitude(long long z, t_flist **base, long long *checkmin)
            *checkmin  = (int) *checkmin ;
      else if ((*base)->spec == 3 && (*checkmin  = (char) z))
         *checkmin  = (char) *checkmin ;
-    while((*checkmin) != 0) 
+    while((*checkmin) != 0)
     {
         (*checkmin) = (*checkmin)/10;
         (*base)->longitude++;
@@ -1101,7 +1101,7 @@ void    ft_check_indent(t_flist ***base, unsigned long long a)
         {
             if((**base)->indent2 != '0')
             {
-                ft_putchar(' '); 
+                ft_putchar(' ');
                 ((**base)->count)++;
             }
         }
@@ -1144,7 +1144,7 @@ void	ft_loputnbrmin(long long z, t_flist **base, long long checkmin)
         ft_check_minus_base(&base, checkmin);
 	}
 	if (a >= 10)
-		ft_loputnbr((void*)(a / 10), base); 
+		ft_loputnbr((void*)(a / 10), base);
     ft_check_indent(&base, a);
 }
 
@@ -1199,7 +1199,7 @@ void    ft_check_sign(t_flist **base, long long checkmin, int *check)
          }
          (*check)++;
      }
-     if( (*base)->sign2 != '+' && checkmin >= 0 && (*base)->space == '1') 
+     if( (*base)->sign2 != '+' && checkmin >= 0 && (*base)->space == '1')
     {
         if(((*base)->point > 0) && ((*base)->indent > 0))
             ;
@@ -1208,7 +1208,7 @@ void    ft_check_sign(t_flist **base, long long checkmin, int *check)
             ft_putchar(' ');
             (*base)->count++;
         }
-    } 
+    }
 }
 void    functiondigital(va_list ap, t_flist *base)
 {
@@ -1221,7 +1221,7 @@ void    functiondigital(va_list ap, t_flist *base)
      z = va_arg(ap, long long);
      ft_checklongitude(z, &base, &checkmin);
      ft_checkmin(z, &base, &checkmin);
-    ft_check_sign(&base, checkmin, &check);  
+    ft_check_sign(&base, checkmin, &check);
     if (base->point > 0)
             ft_zerodigital(&base, checkmin);
      if (base->indent > 0)
@@ -1245,7 +1245,7 @@ void    functionper(t_flist *base)
                 ft_indentdchar(&base);
             ft_putchar('%');
             base->count++;
-            ft_minus2(&base);  
+            ft_minus2(&base);
 }
 void    ft_convertationpointer(unsigned long long y)
 {
@@ -1261,13 +1261,13 @@ void    ft_convertationpointer(unsigned long long y)
          ft_putchar ('e');
     else if (y == 15)
          ft_putchar ('f');
-    else 
-	   ft_putchar((char)(y % 16 + '0')); 
+    else
+	   ft_putchar((char)(y % 16 + '0'));
 }
 void    ft_putpointer(void* z, t_flist **base)
-{   
+{
      unsigned long long y;
-    
+
      if (((*base)->spec == 1) && (y = (unsigned short) z))
        y = (unsigned short)y;
     else if (((*base)->spec == 2) && (y = (unsigned long) z))
@@ -1299,7 +1299,7 @@ void    functionpointer(va_list ap, t_flist *base)
 void    ft_point(char **p, t_flist *base)
 {
     int q;
-    
+
     q = 0;
     (*p)++;
     q++;
@@ -1315,7 +1315,7 @@ void    ft_point(char **p, t_flist *base)
     while(q > 0)
     {
       (*p)++;
-      q--; 
+      q--;
     }
     if(base->point == 0)
         (*p)--;
@@ -1347,7 +1347,7 @@ void    ft_indent(char **p, t_flist *base)
     while(q > 0)
     {
       (*p)++;
-      q--; 
+      q--;
     }
     base->indent = i;
     base->indent2 = '1';
@@ -1355,9 +1355,9 @@ void    ft_indent(char **p, t_flist *base)
 
 void    ft_create_base(t_flist*base)
 {
-    base->count = 0; 
-    base->spec = 0;  
-    base->signf = 0; 
+    base->count = 0;
+    base->spec = 0;
+    base->signf = 0;
     base->work = 0;
     base->indent = 0;
     base->sign2 = '0';
@@ -1378,16 +1378,16 @@ char     *ft_func_check_signs(char *p, t_flist *base)
 
     ptr = p;
     if(*ptr == '-' && (base->match = 1))
-        ft_minus1(&ptr, base); 
+        ft_minus1(&ptr, base);
     if(*ptr == '+' && (base->match = 1))
-        ft_plus1(&ptr, base); 
-    if(*ptr == '#' && (base->match = 1))           
+        ft_plus1(&ptr, base);
+    if(*ptr == '#' && (base->match = 1))
         ft_cage(base);
     if(*ptr == ' ' && (base->match = 1))
          ft_space(base);
           if (*p >= '0' && *p <= '9' && base->point2 == '.')
                     base->match = 1;
-     if (*ptr >= '0' && *ptr <= '9' && base->point2 != '.' && (base->match = 1)) 
+     if (*ptr >= '0' && *ptr <= '9' && base->point2 != '.' && (base->match = 1))
          ft_indent(&ptr, base);
     if(*ptr == '.' && (base->match = 1))
         ft_point(&ptr, base);
@@ -1437,12 +1437,12 @@ void    ft_func_check_symb2(va_list ap, char *p, t_flist *base)
     {
         functiondigitalu(ap, base);
         base->work = 1;
-    } 
+    }
     if (*p == '%'&& (base->match = 1))
     {
         functionper(base);
         base->work = 1;
-    }   
+    }
 }
 int ft_printf(const char *restrict format, ...)
 {

@@ -35,8 +35,12 @@ void	ft_minus2(t_flist **base)
 {
 	if ((*base)->signf > ((*base)->count - (*base)->longitude2))
 	{
+<<<<<<< HEAD
 		(*base)->signf = (*base)->signf -\
 			((*base)->count - (*base)->longitude2);
+=======
+		(*base)->signf = (*base)->signf - ((*base)->count - (*base)->longitude2);
+>>>>>>> b4c3a0d6d45ab7da3b81bcdddc169bc376707b40
 		while ((*base)->signf > 0)
 		{
 			ft_putchar(' ');

@@ -18,8 +18,12 @@ void	ft_loputnbrindent_float(t_flist *base, int check, int checkmin)
 
 
 	i = base->indent;
+<<<<<<< HEAD
 	if((base)->indent > 0 && base->space == '1' && checkmin >= 0)
 		i--;
+=======
+
+>>>>>>> b4c3a0d6d45ab7da3b81bcdddc169bc376707b40
 	if (check < i)
 	{
 		i = i - base->longitude - check;
@@ -30,9 +34,13 @@ void	ft_loputnbrindent_float(t_flist *base, int check, int checkmin)
 		}
 		while (i > 0 && base->sign != '-')
 		{
+<<<<<<< HEAD
 			//if (base->zero == 1 )
 				//base->zero = '0';
 			if ((base->zero == '0' && (base->sign2 == '0')) || base->zero == 1)
+=======
+			if (base->zero == '0')
+>>>>>>> b4c3a0d6d45ab7da3b81bcdddc169bc376707b40
 				ft_putchar('0');
 			else
 				ft_putchar(' ');
@@ -76,6 +84,8 @@ void	functionfloat(va_list ap, t_flist *base)
 	i = i + ft_print_accuracy(f, count);
 	if (i == 0)
 		i = 1;
+	if (base->sign == '-')
+		ft_minus2(&base);
 	base->count = base->count + i + count + 1;
 	if (base->sign == '-')
 		ft_minus2(&base);
