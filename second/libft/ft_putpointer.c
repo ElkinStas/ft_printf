@@ -71,6 +71,7 @@ void	functionper(t_flist *base)
 	if (base->indent > 0)
 		ft_indentdchar(&base);
 	ft_putchar('%');
+	base->longitude++;
 	base->count++;
 	ft_minus2(&base);
 }

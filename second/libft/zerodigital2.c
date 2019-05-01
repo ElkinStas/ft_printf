@@ -33,7 +33,10 @@ void	ft_zerodigital2(t_flist **base, long long checkmin)
 	if (checkmin == 0)
 		(*base)->point = (*base)->point -1;
 	if ((*base)->resh == 1 && checkmin != 0)
-		ft_putstr("0x");
+		{
+			ft_putstr("0x");
+			(*base)->longitude = (*base)->longitude + 2;
+		}
 	    while ((*base)->point > 0 && checkmin >= 0 )
 	{
 		ft_putchar('0');
@@ -194,11 +197,13 @@ void	ft_zerooct(t_flist **base, long long checkmin)
 		{
 			ft_putstr("0");
 			(*base)->count++;
+			(*base)->longitude++;
 		}
 	    while ((*base)->point > 0 && checkmin >= 0 )
 	{
 		ft_putchar('0');
 		(*base)->count++;
+		(*base)->longitude++;
 		(*base)->point--;
 	}
 
@@ -295,7 +300,7 @@ void	ft_countresh_p(unsigned long long z, t_flist *base, int check, long long ch
 	if (base->indent > 0)
 	{
 		ft_loputnbr_p(z, base, &check);
-		ft_loputnbrindentprint(base, check, checkmin);
+		ft_loputnbrindentprintp(base, check, checkmin);
 	}
 	if (base->zero != '0' && checkmin != 0)
 		ft_putstr("0x");
@@ -392,3 +397,4 @@ void	ft_checkmino(long long z, t_flist **base, long long *checkmin)
 	else	if ((*base)->spec == 3 && (*checkmin = (unsigned char)z))
 		*checkmin = (unsigned char)*checkmin;
 }
+

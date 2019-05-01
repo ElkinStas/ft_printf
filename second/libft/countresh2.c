@@ -34,17 +34,18 @@ void	ft_check_indent4(t_flist **base, unsigned long long y)
 {
 	if (y == 0 && (*base)->point2 == '.' && (*base)->zero != '0')
 	{
-		if ((*base)->indent2 != '0')
-		{
-			ft_putchar(' ');
-			((*base)->count)++;
-		}
-		else if ((y == 0 && (*base)->point2 == '.' && (*base)->point != 0) ||
+
+		 if ((y == 0 && (*base)->point2 == '.' && (*base)->point != 0) ||
 		(y == 0 && (*base)->point2 == '.' && (*base)->point == 0 && (*base)->longitude > 0))
 			{
 				ft_putchar('0');
 				((*base)->count)++;
 			}
+		else if ((*base)->indent2 != '0')
+		{
+			ft_putchar(' ');
+			((*base)->count)++;
+		}
 	}
 	else	if ((y != 0) || (*base)->point2 != '.'
 			|| (y == 0 && (*base)->point2 == '.'))

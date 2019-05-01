@@ -63,6 +63,7 @@ void	ft_point(char **p, t_flist *base)
 	}
 	if (base->point == 0)
 		(*p)--;
+	base->zero = 1;
 }
 
 void	ft_space(t_flist *base)
@@ -111,4 +112,6 @@ void	ft_create_base(t_flist *base)
 	base->minus = '0';
 	base->indent2 = '0';
 	base->resh = 0;
+	base->longitude2 = 0;
+
 }

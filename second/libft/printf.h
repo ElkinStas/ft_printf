@@ -36,6 +36,7 @@ typedef struct		s_flist
 	char			minus;
 	char			indent2;
 	int				match;
+	int				longitude2;
 }					t_flist;
 
 void				ft_checkmin(long long z, t_flist **base,\
